@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
-import com.renatoramos.common.base.BaseActivity
+import com.renatoramos.rickandmorty.common.base.BaseActivity
 import com.renatoramos.rickandmorty.R
 
 class MainAppActivity : BaseActivity() {

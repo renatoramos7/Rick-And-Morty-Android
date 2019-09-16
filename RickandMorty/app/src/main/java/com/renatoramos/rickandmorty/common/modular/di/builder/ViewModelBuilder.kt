@@ -2,8 +2,8 @@ package com.renatoramos.rickandmorty.common.modular.di.builder
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.renatoramos.common.modular.di.annotation.ViewModelKey
-import com.renatoramos.common.modular.di.factory.ViewModelFactory
+import com.renatoramos.rickandmorty.common.modular.di.annotation.ViewModelKey
+import com.renatoramos.rickandmorty.common.modular.di.factory.ViewModelFactory
 import com.renatoramos.rickandmorty.presentation.ui.main.MainAppViewModel
 import dagger.Binds
 import dagger.Module

@@ -1,6 +1,6 @@
 package com.renatoramos.rickandmorty.common.modular.di.builder
 
-import com.renatoramos.common.modular.di.annotation.ActivityScope
+import com.renatoramos.rickandmorty.common.modular.di.annotation.ActivityScope
 import com.renatoramos.rickandmorty.presentation.ui.main.MainAppActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector

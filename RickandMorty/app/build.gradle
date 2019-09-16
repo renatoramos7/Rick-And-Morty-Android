@@ -101,6 +101,9 @@ dependencies {
     implementation Dependencies.androidx_appcompat
     implementation Dependencies.androidx_constraintlayout
 
+    // Play Services
+    implementation Dependencies.play_services_maps
+
     //Navigation
     implementation Dependencies.navigation_fragment
     implementation Dependencies.navigation_ui_ktx
@@ -117,11 +120,46 @@ dependencies {
     implementation Dependencies.dagger_android_support
     implementation Dependencies.dagger_android
 
+    // ReactiveX Dependencies.
+    implementation Dependencies.rxjava2
+    implementation Dependencies.rxandroid2
+
     // Retrofit.
     implementation Dependencies.retrofit2
+
+    // RetroFit adapter
+    implementation Dependencies.retrofit2_adapter_rxjava2
+
+    // Retrofit Converter
+    implementation Dependencies.retrofit2_converter_gson
+
+    // Gson
+    implementation Dependencies.gson
+
+    //paperdb
+    implementation Dependencies.paperdb
 
     // OkHttp
     implementation Dependencies.okhttp
     implementation Dependencies.okhttp_logging_interceptor
 
+    // Test Dependencies.
+    // JUnit
+    testImplementation Dependencies.junit
+
+    //Mockito
+    testImplementation Dependencies.mockito
+    androidTestImplementation Dependencies.mockitoAndroid
+    testImplementation Dependencies.mockito_inline
+
+    //Mockito  Kotlin
+    testImplementation Dependencies.mockito_Kotlin
+
+    // Kotlin Test Support
+    testImplementation Dependencies.kotlin_test
+    testImplementation Dependencies.kotlin_test_junit
+
+    // Espresso
+    androidTestImplementation Dependencies.androidx_test
+    androidTestImplementation Dependencies.androidx_test_espresso
 }
