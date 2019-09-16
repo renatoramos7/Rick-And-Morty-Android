@@ -1,4 +1,4 @@
-package com.example.rickandmorty
+package com.renatoramos.data
 
 import org.junit.Test
 

@@ -1,4 +1,4 @@
-package com.example.rickandmorty
+package com.renatoramos.rickandmorty
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

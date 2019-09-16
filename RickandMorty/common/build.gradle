@@ -1,4 +1,4 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
@@ -9,7 +9,6 @@ android {
     buildToolsVersion AndroidConfig.buildTools
 
     defaultConfig {
-        applicationId AndroidConfig.applicationId
         minSdkVersion AndroidConfig.minSdk
         targetSdkVersion AndroidConfig.targetSdk
         versionCode AndroidConfig.versionCode
@@ -34,9 +33,6 @@ android {
         exclude 'META-INF/license.txt'
         exclude 'META-INF/dependencies.txt'
         exclude 'META-INF/LGPL2.1'
-        exclude 'android/databinding/DataBinderMapper.java'
-        exclude 'android/databinding/DataBindingComponent.java'
-        exclude 'android/databinding/DynamicUtil.java'
     }
 
     kapt {
@@ -72,43 +68,23 @@ android {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            //signingConfig signingConfigs.release
         }
 
         debug {
+            //signingConfig signingConfigs.debug
             minifyEnabled false
             versionNameSuffix '-DEBUG'
         }
     }
-
-    productFlavors {}
-
-    packagingOptions {}
-
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    // Modules
-    implementation project(':common')
-    implementation project(':data')
-
     // Kotlin
     implementation Dependencies.kotlin_stdlib_jdk8
     implementation Dependencies.kotlinKTX
-
-    // Android X Dependencies.
-    implementation Dependencies.androidx_appcompat
-    implementation Dependencies.androidx_constraintlayout
-
-    //Navigation
-    implementation Dependencies.navigation_fragment
-    implementation Dependencies.navigation_ui_ktx
-
-    // Lifecycle components
-    // ViewModel and LiveData
-    implementation Dependencies.androidx_lifecycle
-    annotationProcessor Dependencies.androidx_lifecycle_common_java8
 
     // Dagger Dependencies.
     kapt Dependencies.dagger_compiler
@@ -117,11 +93,32 @@ dependencies {
     implementation Dependencies.dagger_android_support
     implementation Dependencies.dagger_android
 
+    //Navigation
+    implementation Dependencies.navigation_fragment
+    implementation Dependencies.navigation_ui_ktx
+
+    // ReactiveX Dependencies.
+    implementation Dependencies.rxjava2
+    implementation Dependencies.rxandroid2
+
     // Retrofit.
     implementation Dependencies.retrofit2
+
+    // RetroFit adapter
+    implementation Dependencies.retrofit2_adapter_rxjava2
+
+    // Retrofit Converter
+    implementation Dependencies.retrofit2_converter_gson
+
+    // Gson
+    implementation Dependencies.gson
 
     // OkHttp
     implementation Dependencies.okhttp
     implementation Dependencies.okhttp_logging_interceptor
+
+    // ReactiveX Dependencies.
+    implementation Dependencies.rxjava2
+    implementation Dependencies.rxandroid2
 
 }
