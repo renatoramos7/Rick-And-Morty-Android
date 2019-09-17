@@ -1,4 +1,4 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
@@ -9,7 +9,6 @@ android {
     buildToolsVersion AndroidConfig.buildTools
 
     defaultConfig {
-        applicationId AndroidConfig.applicationId
         minSdkVersion AndroidConfig.minSdk
         targetSdkVersion AndroidConfig.targetSdk
         versionCode AndroidConfig.versionCode
@@ -34,9 +33,6 @@ android {
         exclude 'META-INF/license.txt'
         exclude 'META-INF/dependencies.txt'
         exclude 'META-INF/LGPL2.1'
-        exclude 'android/databinding/DataBinderMapper.java'
-        exclude 'android/databinding/DataBindingComponent.java'
-        exclude 'android/databinding/DynamicUtil.java'
     }
 
     kapt {
@@ -72,42 +68,23 @@ android {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            //signingConfig signingConfigs.release
         }
 
         debug {
+            //signingConfig signingConfigs.debug
             minifyEnabled false
             versionNameSuffix '-DEBUG'
         }
     }
-
-    productFlavors {}
-
-    packagingOptions {}
-
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    // Modules
-    implementation project(':core')
-
     // Kotlin
     implementation Dependencies.kotlin_stdlib_jdk8
     implementation Dependencies.kotlinKTX
-
-    // Android X Dependencies.
-    implementation Dependencies.androidx_appcompat
-    implementation Dependencies.androidx_constraintlayout
-
-    //Navigation
-    implementation Dependencies.navigation_fragment
-    implementation Dependencies.navigation_ui_ktx
-
-    // Lifecycle components
-    // ViewModel and LiveData
-    implementation Dependencies.androidx_lifecycle
-    annotationProcessor Dependencies.androidx_lifecycle_common_java8
 
     // Dagger Dependencies.
     kapt Dependencies.dagger_compiler
@@ -115,6 +92,10 @@ dependencies {
     implementation Dependencies.dagger
     implementation Dependencies.dagger_android_support
     implementation Dependencies.dagger_android
+
+    //Navigation
+    implementation Dependencies.navigation_fragment
+    implementation Dependencies.navigation_ui_ktx
 
     // ReactiveX Dependencies.
     implementation Dependencies.rxjava2
@@ -132,30 +113,15 @@ dependencies {
     // Gson
     implementation Dependencies.gson
 
-    //paperdb
-    implementation Dependencies.paperdb
-
     // OkHttp
     implementation Dependencies.okhttp
     implementation Dependencies.okhttp_logging_interceptor
 
-    // Test Dependencies.
-    // JUnit
-    testImplementation Dependencies.junit
+    // ReactiveX Dependencies.
+    implementation Dependencies.rxjava2
+    implementation Dependencies.rxandroid2
 
-    //Mockito
-    testImplementation Dependencies.mockito
-    androidTestImplementation Dependencies.mockitoAndroid
-    testImplementation Dependencies.mockito_inline
+    //paperdb
+    implementation Dependencies.paperdb
 
-    //Mockito  Kotlin
-    testImplementation Dependencies.mockito_Kotlin
-
-    // Kotlin Test Support
-    testImplementation Dependencies.kotlin_test
-    testImplementation Dependencies.kotlin_test_junit
-
-    // Espresso
-    androidTestImplementation Dependencies.androidx_test
-    androidTestImplementation Dependencies.androidx_test_espresso
 }
