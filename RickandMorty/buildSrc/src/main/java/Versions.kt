@@ -80,8 +80,8 @@ object Versions {
     const val rxjavaAdapterLibVersion = "2.5.0"
 
     // Square Dependencies.
-    const val retrofit2LibVersion = "2.5.0"
-    const val okhttp3LibVersion = "3.10.0"
+    const val retrofit2LibVersion = "2.6.1"
+    const val okhttp3LibVersion = "4.2.0"
     const val butterknifeLibVersion = "8.8.1"
 
     // Moshi
@@ -89,7 +89,7 @@ object Versions {
     const val converterMoshiLibVersion = "2.5.0"
 
     // Image cache
-    const val glideLibVersion = "4.6.1"
+    const val glideLibVersion = "4.9.0"
 
     // Image cache
     const val paperdbLibVersion = "2.6"

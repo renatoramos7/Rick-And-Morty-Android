@@ -1,7 +1,7 @@
 package com.renatoramos.rickandmorty
 
 import android.app.Application
-import com.renatoramos.rickandmorty.common.di.DaggerAppComponent
+import com.renatoramos.rickandmorty.common.modular.di.DaggerAppComponent
 import com.renatoramos.rickandmorty.common.modular.di.module.ApplicationModule
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector

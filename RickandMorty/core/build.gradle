@@ -80,48 +80,57 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api fileTree(dir: 'libs', include: ['*.jar'])
 
     // Kotlin
-    implementation Dependencies.kotlin_stdlib_jdk8
-    implementation Dependencies.kotlinKTX
+    api Dependencies.kotlin_stdlib_jdk8
+    api Dependencies.kotlinKTX
+
+    // Android X Dependencies.
+    implementation Dependencies.androidx_appcompat
+    implementation Dependencies.androidx_constraintlayout
 
     // Dagger Dependencies.
     kapt Dependencies.dagger_compiler
     kapt Dependencies.dagger_processor
-    implementation Dependencies.dagger
-    implementation Dependencies.dagger_android_support
-    implementation Dependencies.dagger_android
+    api Dependencies.dagger
+    api Dependencies.dagger_android_support
+    api Dependencies.dagger_android
 
     //Navigation
-    implementation Dependencies.navigation_fragment
-    implementation Dependencies.navigation_ui_ktx
+    api Dependencies.navigation_fragment
+    api Dependencies.navigation_ui_ktx
 
     // ReactiveX Dependencies.
-    implementation Dependencies.rxjava2
-    implementation Dependencies.rxandroid2
+    api Dependencies.rxjava2
+    api Dependencies.rxandroid2
 
     // Retrofit.
-    implementation Dependencies.retrofit2
+    api Dependencies.retrofit2
 
     // RetroFit adapter
-    implementation Dependencies.retrofit2_adapter_rxjava2
+    api Dependencies.retrofit2_adapter_rxjava2
 
     // Retrofit Converter
-    implementation Dependencies.retrofit2_converter_gson
+    api Dependencies.retrofit2_converter_gson
 
     // Gson
-    implementation Dependencies.gson
+    api Dependencies.gson
 
     // OkHttp
-    implementation Dependencies.okhttp
-    implementation Dependencies.okhttp_logging_interceptor
+    api Dependencies.okhttp
+    api Dependencies.okhttp_logging_interceptor
 
     // ReactiveX Dependencies.
-    implementation Dependencies.rxjava2
-    implementation Dependencies.rxandroid2
+    api Dependencies.rxjava2
+    api Dependencies.rxandroid2
 
     //paperdb
-    implementation Dependencies.paperdb
+    api Dependencies.paperdb
+
+    //Glide
+    api Dependencies.glide
+    kapt Dependencies.glide_compiler
+    api Dependencies.glide_okhttp3
 
 }

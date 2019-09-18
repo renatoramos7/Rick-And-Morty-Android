@@ -138,6 +138,7 @@ object Dependencies {
     /** Image cache **/
     const val glide = "com.github.bumptech.glide:glide:${Versions.glideLibVersion}"
     const val glide_compiler = "com.github.bumptech.glide:compiler:${Versions.glideLibVersion}"
+    const val glide_okhttp3= "com.github.bumptech.glide:okhttp3-integration:${Versions.glideLibVersion}"
 
     /**  Image Zoom **/
     const val imagezoom =  "it.sephiroth.android.library.imagezoom:imagezoom:${Versions.imageZoomLibVersion}"

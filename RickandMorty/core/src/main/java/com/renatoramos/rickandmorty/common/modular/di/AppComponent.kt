@@ -1,8 +1,7 @@
-package com.renatoramos.rickandmorty.common.di
+package com.renatoramos.rickandmorty.common.modular.di
 
 import com.renatoramos.rickandmorty.MainApplication
-import com.renatoramos.rickandmorty.common.di.builder.ActivityBuilder
-import com.renatoramos.rickandmorty.common.di.builder.ViewModelBuilder
+import com.renatoramos.rickandmorty.common.modular.di.builder.ViewModelBuilder
 import com.renatoramos.rickandmorty.common.modular.di.module.*
 import dagger.BindsInstance
 import dagger.Component
@@ -15,7 +14,7 @@ import javax.inject.Singleton
     (AndroidSupportInjectionModule::class),
     (ApplicationModule::class),
     (ViewModelBuilder::class),
-    (ActivityBuilder::class),
+    //(ActivityBuilder::class),
     (SettingsModule::class),
     (NetworkModule::class),
     (NetworkServiceModule::class),
