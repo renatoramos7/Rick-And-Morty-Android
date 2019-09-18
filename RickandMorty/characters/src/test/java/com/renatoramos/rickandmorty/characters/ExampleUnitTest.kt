@@ -1,4 +1,4 @@
-package com.renatoramos.rickandmorty.bottomnavigation
+package com.renatoramos.rickandmorty.characters
 
 import org.junit.Test
 

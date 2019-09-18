@@ -48,7 +48,7 @@ object Versions {
     const val mockWebServer = "3.9.0"
 
     //Android X Libs
-    const val androidx_appcompatibVersion = "1.1.0-alpha03"
+    const val androidx_appcompatibVersion = "1.1.0"
     const val androidx_constraintlayoutLibVersion = "1.1.3"
     const val androidx_recyclerviewLibVersion = "1.0.0"
     const val androidx_lifecycleLibVersion = "2.0.0"
@@ -56,7 +56,7 @@ object Versions {
     const val androidx_navigationLibVersion = "2.0.0"
 
     //Kotlin KTX
-    const val kotlinKTXLibVersion = "1.1.0-alpha05"
+    const val kotlinKTXLibVersion = "1.0.2"
 
     // Google Dependencies.
     const val supportLibVersion = "27.1.1"

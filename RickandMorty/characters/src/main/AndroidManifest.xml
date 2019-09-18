@@ -1,2 +1,2 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.renatoramos.rickandmorty.bottomnavigation" />
+    package="com.renatoramos.rickandmorty.characters" />

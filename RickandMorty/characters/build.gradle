@@ -33,6 +33,9 @@ android {
         exclude 'META-INF/license.txt'
         exclude 'META-INF/dependencies.txt'
         exclude 'META-INF/LGPL2.1'
+        exclude 'android/databinding/DataBinderMapper.java'
+        exclude 'android/databinding/DataBindingComponent.java'
+        exclude 'android/databinding/DynamicUtil.java'
     }
 
     kapt {
@@ -82,51 +85,6 @@ android {
 dependencies {
     api fileTree(dir: 'libs', include: ['*.jar'])
 
-    // Kotlin
-    api Dependencies.kotlin_stdlib_jdk8
-    api Dependencies.kotlinKTX
-
-    // Android X Dependencies.
-    implementation Dependencies.androidx_appcompat
-    implementation Dependencies.androidx_constraintlayout
-
-    // Dagger Dependencies.
-    kapt Dependencies.dagger_compiler
-    kapt Dependencies.dagger_processor
-    api Dependencies.dagger
-    api Dependencies.dagger_android_support
-    api Dependencies.dagger_android
-
-    //Navigation
-    api Dependencies.navigation_fragment
-    api Dependencies.navigation_ui_ktx
-
-    // ReactiveX Dependencies.
-    api Dependencies.rxjava2
-    api Dependencies.rxandroid2
-
-    // Retrofit.
-    api Dependencies.retrofit2
-
-    // RetroFit adapter
-    api Dependencies.retrofit2_adapter_rxjava2
-
-    // Retrofit Converter
-    api Dependencies.retrofit2_converter_gson
-
-    // Gson
-    api Dependencies.gson
-
-    // OkHttp
-    api Dependencies.okhttp
-    api Dependencies.okhttp_logging_interceptor
-
-    //paperdb
-    api Dependencies.paperdb
-
-    //Glide
-    api Dependencies.glide
-    kapt Dependencies.glide_compiler
-    api Dependencies.glide_okhttp3
-
+    // Modules
+    api project(':core')
 }
