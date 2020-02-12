@@ -20,5 +20,4 @@ class CharactersListFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_characters_list, container, false)
     }
 
-
 }
