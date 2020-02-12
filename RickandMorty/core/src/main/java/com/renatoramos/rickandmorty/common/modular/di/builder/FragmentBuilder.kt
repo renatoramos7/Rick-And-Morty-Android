@@ -3,7 +3,7 @@ package com.renatoramos.rickandmorty.common.modular.di.builder
 import dagger.Module
 
 @Module
-abstract class ActivityBuilder {
+abstract class FragmentBuilder {
 
 
 /*    @ActivityScope
