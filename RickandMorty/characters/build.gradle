@@ -1,4 +1,4 @@
-apply plugin: 'com.android.library'
+apply plugin: 'com.android.dynamic-feature'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
@@ -66,24 +66,11 @@ android {
         }
     }
 
-    buildTypes {
-
-        release {
-            minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            //signingConfig signingConfigs.release
-        }
-
-        debug {
-            //signingConfig signingConfigs.debug
-            minifyEnabled false
-            versionNameSuffix '-DEBUG'
-        }
-    }
 }
 
 dependencies {
     api fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':app')
 
     // Modules
     api project(':core')

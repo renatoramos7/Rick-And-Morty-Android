@@ -84,12 +84,14 @@ android {
 
     packagingOptions {}
 
+    dynamicFeatures = [":characters"]
+
 }
 
 dependencies {
 
     // Modules
     api project(':core')
-    api project(':characters')
+    //api project(':characters')
 
 }

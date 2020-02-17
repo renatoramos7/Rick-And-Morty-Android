@@ -1,2 +1,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.renatoramos.rickandmorty.characters" />
+xmlns:dist="http://schemas.android.com/apk/distribution"
+package="com.renatoramos.rickandmorty.characters">
+
+<dist:module dist:title="@string/title_episodes">
+    <dist:delivery>
+        <dist:on-demand/>
+    </dist:delivery>
+    <dist:fusing dist:include="true" />
+</dist:module>
+
+</manifest>
