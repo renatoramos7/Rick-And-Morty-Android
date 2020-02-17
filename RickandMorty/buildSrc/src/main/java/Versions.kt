@@ -4,7 +4,7 @@ object Versions {
     const val kotlin = "1.3.50"
 
     // Gradle
-    const val gradle = "3.5.0"
+    const val gradle = "3.5.3"
 
     // Android data Binding
     const val dataBindingLibVersion = "3.1.4"
@@ -53,7 +53,7 @@ object Versions {
     const val androidx_recyclerviewLibVersion = "1.0.0"
     const val androidx_lifecycleLibVersion = "2.0.0"
     const val androidx_pagingLibVersion = "2.1.0"
-    const val androidx_navigationLibVersion = "2.0.0"
+    const val androidx_navigationLibVersion = "2.3.0-alpha01"
 
     //Kotlin KTX
     const val kotlinKTXLibVersion = "1.0.2"
@@ -82,7 +82,6 @@ object Versions {
     // Square Dependencies.
     const val retrofit2LibVersion = "2.6.1"
     const val okhttp3LibVersion = "4.2.0"
-    const val butterknifeLibVersion = "8.8.1"
 
     // Moshi
     const val moshiLibVersion = "1.8.0"

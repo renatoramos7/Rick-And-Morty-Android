@@ -14,6 +14,7 @@ object Dependencies {
     const val androidx_paging_rxjava2 = "androidx.paging:paging-rxjava2:${Versions.androidx_pagingLibVersion}"
     const val navigation_fragment = "androidx.navigation:navigation-fragment-ktx:${Versions.androidx_navigationLibVersion}"
     const val navigation_ui_ktx = "androidx.navigation:navigation-ui-ktx:${Versions.androidx_navigationLibVersion}"
+    const val navigation_dynamic_features = "androidx.navigation:navigation-dynamic-features-fragment:${Versions.androidx_navigationLibVersion}"
 
     /** Kotlin KTX **/
     const val kotlinKTX = "androidx.core:core-ktx:${Versions.kotlinKTXLibVersion}"

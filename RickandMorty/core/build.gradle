@@ -100,6 +100,7 @@ dependencies {
     //Navigation
     api Dependencies.navigation_fragment
     api Dependencies.navigation_ui_ktx
+    api Dependencies.navigation_dynamic_features
 
     // ReactiveX Dependencies.
     api Dependencies.rxjava2
