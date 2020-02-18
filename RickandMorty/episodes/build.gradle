@@ -1,4 +1,4 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
@@ -9,7 +9,6 @@ android {
     buildToolsVersion AndroidConfig.buildTools
 
     defaultConfig {
-        applicationId AndroidConfig.applicationId
         minSdkVersion AndroidConfig.minSdk
         targetSdkVersion AndroidConfig.targetSdk
         versionCode AndroidConfig.versionCode
@@ -72,25 +71,20 @@ android {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            //signingConfig signingConfigs.release
         }
 
         debug {
+            //signingConfig signingConfigs.debug
             minifyEnabled false
             versionNameSuffix '-DEBUG'
         }
     }
-
-    productFlavors {}
-
-    packagingOptions {}
-
 }
 
 dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
 
     // Modules
     api project(':core')
-    api project(':characters')
-    api project(':episodes')
-
 }
