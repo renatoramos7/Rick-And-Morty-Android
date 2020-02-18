@@ -7,7 +7,9 @@
     app:startDestination="@id/characters_list_fragment"
     tools:ignore="UnusedNavigation">
 
-    <fragment android:id="@+id/characters_list_fragment"
+    <fragment
+        app:moduleName="dynamicFeatureCharacters"
+        android:id="@+id/characters_list_fragment"
         android:name="com.renatoramos.rickandmorty.characters.presentation.ui.characterslist.CharactersListFragment"
         tools:layout="@layout/fragment_characters_list"
         android:label="Characters"
