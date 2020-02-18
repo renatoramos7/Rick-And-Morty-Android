@@ -15,7 +15,7 @@ import com.renatoramos.rickandmorty.R
 class MainAppActivity : AppCompatActivity() {
 
     private val appBarConfiguration: AppBarConfiguration by lazy {
-        AppBarConfiguration.Builder(setOf(R.id.characters_list_fragment)).build()
+        AppBarConfiguration.Builder(setOf(R.id.characters_list_fragment, R.id.episodes_list_fragment)).build()
     }
 
     private val navController: NavController by lazy { findNavController(R.id.fragment_nav_host) }
@@ -41,23 +41,10 @@ class MainAppActivity : AppCompatActivity() {
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.characters_list_fragment -> btmNavMain.visibility = View.VISIBLE
+                R.id.characters_list_fragment, R.id.episodes_list_fragment -> btmNavMain.visibility = View.VISIBLE
                 else -> btmNavMain.visibility = View.GONE
             }
         }
 
     }
-
-  /*  private lateinit var navigationController: NavController
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        navigationController = findNavController(R.id.fragment_nav_host)
-        NavigationUI.setupActionBarWithNavController(this, navigationController)
-    }
-
-    override fun onSupportNavigateUp(): Boolean {
-        return navigationController.navigateUp()|| super.onSupportNavigateUp()
-    }*/
 }

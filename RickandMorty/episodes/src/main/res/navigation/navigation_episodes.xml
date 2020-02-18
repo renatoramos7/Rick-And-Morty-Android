@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_characters"
+    app:startDestination="@id/episodes_list_fragment"
+    tools:ignore="UnusedNavigation">
+
+    <fragment android:id="@+id/episodes_list_fragment"
+        android:name="com.renatoramos.rickandmorty.episodes.presentation.ui.episodeslist.EpisodesListFragment"
+        tools:layout="@layout/fragment_episodes_list"
+        android:label="Characters"
+        >
+
+    </fragment>
+
+
+
+
+</navigation>
