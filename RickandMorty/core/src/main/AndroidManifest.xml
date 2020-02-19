@@ -1,6 +1,2 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.renatoramos.rickandmorty.common">
-
-    <application android:name="com.renatoramos.rickandmorty.MainApplication"/>
-
-</manifest>
+    package="com.renatoramos.rickandmorty.common"/>

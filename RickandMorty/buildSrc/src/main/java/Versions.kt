@@ -88,7 +88,7 @@ object Versions {
     const val converterMoshiLibVersion = "2.5.0"
 
     // Image cache
-    const val glideLibVersion = "4.9.0"
+    const val glideLibVersion = "4.11.0"
 
     // Image cache
     const val paperdbLibVersion = "2.6"
