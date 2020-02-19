@@ -3,10 +3,10 @@ package com.renatoramos.rickandmorty.data.store.remote.retrofit.repository.poi
 import com.renatoramos.rickandmorty.data.store.local.paperdb.provider.PoiRepositoryProvider
 import com.renatoramos.rickandmorty.data.store.remote.retrofit.dto.poi.PoiListDTO
 import com.renatoramos.rickandmorty.data.store.remote.retrofit.service.poi.PoiService
-import io.reactivex.Maybe
-import io.reactivex.Observable
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
+import io.reactivex.rxjava3.core.Maybe
+import io.reactivex.rxjava3.core.Observable
+import io.reactivex.rxjava3.schedulers.Schedulers
 import javax.inject.Inject
 
 class PoiRepository @Inject constructor(

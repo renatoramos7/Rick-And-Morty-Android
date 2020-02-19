@@ -3,7 +3,7 @@ package com.renatoramos.rickandmorty.data.store.local.paperdb.provider
 
 import com.renatoramos.rickandmorty.data.store.remote.retrofit.dto.poi.PoiListDTO
 import io.paperdb.Paper
-import io.reactivex.Observable
+import io.reactivex.rxjava3.core.Observable
 
 class PoiRepositoryProvider {
     private val TAGKEY = PoiRepositoryProvider::class.java.simpleName

@@ -102,9 +102,14 @@ dependencies {
     api Dependencies.navigation_ui_ktx
     api Dependencies.navigation_dynamic_features
 
+    // Lifecycle components
+    // ViewModel and LiveData
+    implementation Dependencies.androidx_lifecycle
+    annotationProcessor Dependencies.androidx_lifecycle_common_java8
+
     // ReactiveX Dependencies.
-    api Dependencies.rxjava2
-    api Dependencies.rxandroid2
+    api Dependencies.rxjava3
+    api Dependencies.rxandroid3
 
     // Retrofit.
     api Dependencies.retrofit2
@@ -129,5 +134,25 @@ dependencies {
     api Dependencies.glide
     kapt Dependencies.glide_compiler
     api Dependencies.glide_okhttp3
+
+    // Test Dependencies.
+    // JUnit
+    testImplementation Dependencies.junit
+
+    //Mockito
+    testImplementation Dependencies.mockito
+    androidTestImplementation Dependencies.mockitoAndroid
+    testImplementation Dependencies.mockito_inline
+
+    //Mockito  Kotlin
+    testImplementation Dependencies.mockito_Kotlin
+
+    // Kotlin Test Support
+    testImplementation Dependencies.kotlin_test
+    testImplementation Dependencies.kotlin_test_junit
+
+    // Espresso
+    androidTestImplementation Dependencies.androidx_test
+    androidTestImplementation Dependencies.androidx_test_espresso
 
 }

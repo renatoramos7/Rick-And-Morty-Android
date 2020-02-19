@@ -1,7 +1,7 @@
 package com.renatoramos.rickandmorty.data.store.remote.retrofit.service.poi
 
 import com.renatoramos.rickandmorty.data.store.remote.retrofit.dto.poi.PoilDTO
-import io.reactivex.Observable
+import io.reactivex.rxjava3.core.Observable
 import retrofit2.http.GET
 import retrofit2.http.Query
 

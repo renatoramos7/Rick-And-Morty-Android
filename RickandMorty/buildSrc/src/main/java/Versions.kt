@@ -51,7 +51,7 @@ object Versions {
     const val androidx_appcompatibVersion = "1.1.0"
     const val androidx_constraintlayoutLibVersion = "1.1.3"
     const val androidx_recyclerviewLibVersion = "1.0.0"
-    const val androidx_lifecycleLibVersion = "2.0.0"
+    const val androidx_lifecycleLibVersion = "2.2.0"
     const val androidx_pagingLibVersion = "2.1.0"
     const val androidx_navigationLibVersion = "2.3.0-alpha01"
 
@@ -66,7 +66,7 @@ object Versions {
     const val roomLibVersion = "1.1.1"
 
     // Lifecycle components
-    const val archComponentLibVersion = "1.1.1"
+    const val archComponentLibVersion = "2.1.1"
 
     // Pading
     const val padingLibVersion = "1.0.1"
@@ -77,6 +77,7 @@ object Versions {
     // ReactiveX Dependencies.
     const val rxandroid2LibVersion = "2.1.1"
     const val rxjava2LibVersion = "2.2.8"
+    const val rxjava3LibVersion = "3.0.0"
     const val rxjavaAdapterLibVersion = "2.5.0"
 
     // Square Dependencies.

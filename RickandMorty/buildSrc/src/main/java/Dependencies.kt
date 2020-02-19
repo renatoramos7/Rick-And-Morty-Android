@@ -104,6 +104,9 @@ object Dependencies {
     const val rxjava2 = "io.reactivex.rxjava2:rxjava:${Versions.rxjava2LibVersion}"
     const val rxandroid2 = "io.reactivex.rxjava2:rxandroid:${Versions.rxandroid2LibVersion}"
 
+    const val rxjava3 = "io.reactivex.rxjava3:rxjava:${Versions.rxjava3LibVersion}"
+    const val rxandroid3 = "io.reactivex.rxjava3:rxandroid:${Versions.rxjava3LibVersion}"
+
     /** RetroFit **/
     const val retrofit2 = "com.squareup.retrofit2:retrofit:${Versions.retrofit2LibVersion}"
 
