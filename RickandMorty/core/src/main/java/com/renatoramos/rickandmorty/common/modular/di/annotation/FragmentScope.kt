@@ -1,4 +1,4 @@
-package com.renatoramos.rickandmort.common.modular.di.annotation
+package com.renatoramos.rickandmorty.common.modular.di.annotation
 
 import javax.inject.Scope
 

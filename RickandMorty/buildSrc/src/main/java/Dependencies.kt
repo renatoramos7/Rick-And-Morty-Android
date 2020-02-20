@@ -32,7 +32,7 @@ object Dependencies {
     const val firebase_inapp_messaging_display = "com.google.firebase:firebase-inappmessaging-display:${Versions.firebase_inapp_messaging_display}"
 
     /** multidex **/
-    const val multidex = "com.android.support:multidex:${Versions.multidex}"
+    const val multidex = "androidx.multidex:multidex:${Versions.multidex}"
 
     /** android_maps_utils **/
     const val android_maps_utils = "com.google.maps.android:android-maps-utils:${Versions.android_maps_utils}"

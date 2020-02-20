@@ -87,6 +87,7 @@ dependencies {
 
     // Modules
     api project(':core')
+    api project(':home')
     api project(':characters')
     api project(':episodes')
 

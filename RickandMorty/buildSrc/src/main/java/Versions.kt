@@ -22,7 +22,7 @@ object Versions {
     const val firebase_inapp_messaging_display = "17.0.3"
 
     //multidex
-    const val multidex = "1.0.3"
+    const val multidex = "2.0.1"
 
     //multidex
     const val android_maps_utils = "0.5"
@@ -56,7 +56,7 @@ object Versions {
     const val androidx_navigationLibVersion = "2.3.0-alpha01"
 
     //Kotlin KTX
-    const val kotlinKTXLibVersion = "1.0.2"
+    const val kotlinKTXLibVersion = "1.1.0"
 
     // Google Dependencies.
     const val supportLibVersion = "27.1.1"
@@ -72,16 +72,16 @@ object Versions {
     const val padingLibVersion = "1.0.1"
 
     // Dagger Dependencies.
-    const val daggerLibVersion = "2.24"
+    const val daggerLibVersion = "2.26"
 
     // ReactiveX Dependencies.
     const val rxandroid2LibVersion = "2.1.1"
     const val rxjava2LibVersion = "2.2.8"
     const val rxjava3LibVersion = "3.0.0"
-    const val rxjavaAdapterLibVersion = "2.5.0"
+    const val rxjavaAdapterLibVersion = "2.7.1"
 
     // Square Dependencies.
-    const val retrofit2LibVersion = "2.6.1"
+    const val retrofit2LibVersion = "2.7.1"
     const val okhttp3LibVersion = "4.2.0"
 
     // Moshi

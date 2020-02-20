@@ -5,13 +5,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.renatoramos.rickandmorty.characters.R
+import com.renatoramos.rickandmorty.common.base.BaseFragment
 import javax.inject.Inject
 
 
-class CharactersListFragment : Fragment() {
+class CharactersListFragment : BaseFragment() {
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory

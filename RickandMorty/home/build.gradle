@@ -33,6 +33,9 @@ android {
         exclude 'META-INF/license.txt'
         exclude 'META-INF/dependencies.txt'
         exclude 'META-INF/LGPL2.1'
+        exclude 'android/databinding/DataBinderMapper.java'
+        exclude 'android/databinding/DataBindingComponent.java'
+        exclude 'android/databinding/DynamicUtil.java'
     }
 
     kapt {
@@ -82,77 +85,18 @@ android {
 dependencies {
     api fileTree(dir: 'libs', include: ['*.jar'])
 
-    // Kotlin
-    api Dependencies.kotlin_stdlib_jdk8
-    api Dependencies.kotlinKTX
-
-    // Android X Dependencies.
-    implementation Dependencies.androidx_appcompat
-    implementation Dependencies.androidx_constraintlayout
+    // Modules
+    api project(':core')
+    api project(':characters')
+    api project(':episodes')
 
     // Dagger Dependencies.
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     kapt Dependencies.dagger_compiler
     kapt Dependencies.dagger_processor
-    api Dependencies.dagger
-    api Dependencies.dagger_android_support
-    api Dependencies.dagger_android
-
-    //Navigation
-    api Dependencies.navigation_fragment
-    api Dependencies.navigation_ui_ktx
-    api Dependencies.navigation_dynamic_features
-
-    // Lifecycle components
-    // ViewModel and LiveData
-    implementation Dependencies.androidx_lifecycle
-    annotationProcessor Dependencies.androidx_lifecycle_common_java8
-
-    // ReactiveX Dependencies.
-    api Dependencies.rxjava3
-    api Dependencies.rxandroid3
-
-    // Retrofit.
-    api Dependencies.retrofit2
-
-    // RetroFit adapter
-    api Dependencies.retrofit2_adapter_rxjava2
-
-    // Retrofit Converter
-    api Dependencies.retrofit2_converter_gson
-
-    // Gson
-    api Dependencies.gson
-
-    // OkHttp
-    api Dependencies.okhttp
-    api Dependencies.okhttp_logging_interceptor
-
-    //paperdb
-    api Dependencies.paperdb
-
-    //Glide
-    api Dependencies.glide
-    kapt Dependencies.glide_compiler
-    api Dependencies.glide_okhttp3
-
-    // Test Dependencies.
-    // JUnit
-/*    testImplementation Dependencies.junit
-
-    //Mockito
-    testImplementation Dependencies.mockito
-    androidTestImplementation Dependencies.mockitoAndroid
-    testImplementation Dependencies.mockito_inline
-
-    //Mockito  Kotlin
-    testImplementation Dependencies.mockito_Kotlin
-
-    // Kotlin Test Support
-    testImplementation Dependencies.kotlin_test
-    testImplementation Dependencies.kotlin_test_junit
-
-    // Espresso
-    androidTestImplementation Dependencies.androidx_test
-    androidTestImplementation Dependencies.androidx_test_espresso*/
+    //api Dependencies.dagger
+    //api Dependencies.dagger_android_support
+    //api Dependencies.dagger_android
 
 }

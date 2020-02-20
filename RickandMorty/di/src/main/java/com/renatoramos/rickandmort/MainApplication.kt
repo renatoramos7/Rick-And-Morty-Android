@@ -13,13 +13,13 @@ class MainApplication : Application(), HasAndroidInjector {
     @Inject
     lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Any>
 
+    override fun androidInjector(): AndroidInjector<Any> {
+        return dispatchingAndroidInjector
+    }
+
     override fun onCreate() {
         super.onCreate()
         init()
-    }
-
-    override fun androidInjector(): AndroidInjector<Any> {
-        return dispatchingAndroidInjector
     }
 
     private fun init() {

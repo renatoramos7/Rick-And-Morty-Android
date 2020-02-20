@@ -88,9 +88,9 @@ android {
 
 dependencies {
 
-    // Modules
+    // Modules its because the manifest merge.
     api project(':core')
-    api project(':characters')
-    api project(':episodes')
+    api project(':di')
+    api project(':home')
 
 }

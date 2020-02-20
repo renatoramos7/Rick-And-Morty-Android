@@ -88,4 +88,14 @@ dependencies {
     // Modules
     api project(':core')
 
+    // Dagger Dependencies.
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    kapt Dependencies.dagger_compiler
+    kapt Dependencies.dagger_processor
+    //api Dependencies.dagger
+    //api Dependencies.dagger_android_support
+    //api Dependencies.dagger_android
+
+
 }

@@ -1,8 +1,7 @@
-package com.renatoramos.rickandmorty.presentation.ui.main
+package com.renatoramos.rickandmorty.home.presentation.ui
 
 import android.os.Bundle
 import android.view.View
-import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
@@ -11,8 +10,10 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.renatoramos.rickandmorty.R
+import com.renatoramos.rickandmorty.common.base.BaseActivity
 
-class MainAppActivity : AppCompatActivity() {
+
+class HomeAppActivity : BaseActivity() {
 
     private val appBarConfiguration: AppBarConfiguration by lazy {
         AppBarConfiguration.Builder(setOf(R.id.characters_list_fragment, R.id.episodes_list_fragment)).build()
