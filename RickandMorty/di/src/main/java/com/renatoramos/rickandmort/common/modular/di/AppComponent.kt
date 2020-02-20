@@ -4,6 +4,7 @@ import com.renatoramos.rickandmort.MainApplication
 import com.renatoramos.rickandmort.common.modular.di.builder.ActivityBuilder
 import com.renatoramos.rickandmort.common.modular.di.builder.ViewModelBuilder
 import com.renatoramos.rickandmort.common.modular.di.module.*
+import com.renatoramos.rickandmort.common.modular.di.builder.FragmentBuilder
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjector
@@ -16,6 +17,7 @@ import javax.inject.Singleton
     (ApplicationModule::class),
     (ViewModelBuilder::class),
     (ActivityBuilder::class),
+    (FragmentBuilder::class),
     (SettingsModule::class),
     (NetworkModule::class),
     (NetworkServiceModule::class),
