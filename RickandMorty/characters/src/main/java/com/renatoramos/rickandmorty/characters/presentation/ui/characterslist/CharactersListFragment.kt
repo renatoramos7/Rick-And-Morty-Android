@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.renatoramos.rickandmorty.characters.R
 import com.renatoramos.rickandmorty.characters.databinding.FragmentCharactersListBinding
@@ -23,9 +24,10 @@ class CharactersListFragment : BaseFragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
+        charactersListFragmentBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_characters_list, container, false)
 
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_characters_list, container, false)
+        return charactersListFragmentBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
