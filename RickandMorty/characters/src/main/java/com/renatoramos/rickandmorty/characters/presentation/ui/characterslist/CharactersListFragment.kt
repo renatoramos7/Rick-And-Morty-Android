@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.renatoramos.rickandmorty.characters.R
+import com.renatoramos.rickandmorty.characters.databinding.FragmentCharactersListBinding
 import com.renatoramos.rickandmorty.common.base.BaseFragment
 import javax.inject.Inject
 
@@ -17,7 +18,7 @@ class CharactersListFragment : BaseFragment() {
     lateinit var viewModelFactory: ViewModelProvider.Factory
 
     private lateinit var charactersListViewModel: CharactersListViewModel
-    //private lateinit var charactersListFragmentBinding: CharactersListFragmentBinding
+    private lateinit var charactersListFragmentBinding: FragmentCharactersListBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,10 +41,10 @@ class CharactersListFragment : BaseFragment() {
     private fun bindViewModel() {
         charactersListViewModel = ViewModelProvider(activity!!, viewModelFactory).get(CharactersListViewModel::class.java)
 
-        /*CharactersListFragmentBinding.let {
-            it.vehicleListViewModelInView = charactersListViewModel
+       charactersListFragmentBinding.let {
+            it.charactersListViewModelInView = charactersListViewModel
             it.lifecycleOwner = this
-        }*/
+        }
     }
 
 
