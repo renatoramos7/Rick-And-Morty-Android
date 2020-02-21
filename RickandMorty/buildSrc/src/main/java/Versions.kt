@@ -1,7 +1,7 @@
 object Versions {
 
     //Kotlin
-    const val kotlin = "1.3.50"
+    const val kotlin = "1.3.61"
 
     // Gradle
     const val gradle = "3.5.3"
