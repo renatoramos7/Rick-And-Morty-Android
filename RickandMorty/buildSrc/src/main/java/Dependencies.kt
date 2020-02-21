@@ -8,7 +8,10 @@ object Dependencies {
     const val androidx_constraintlayout =  "androidx.constraintlayout:constraintlayout:${Versions.androidx_constraintlayoutLibVersion}"
     const val androidx_recyclerview =  "androidx.recyclerview:recyclerview:${Versions.androidx_recyclerviewLibVersion}"
 
-    const val androidx_lifecycle = "androidx.lifecycle:lifecycle-extensions:${Versions.androidx_lifecycleLibVersion}"
+    const val androidx_lifecycle_ktx = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.androidx_lifecycleLibVersion}"
+    const val androidx_viewmodel_ktx = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.androidx_lifecycleLibVersion}"
+    const val androidx_livedata_ktx = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.androidx_lifecycleLibVersion}"
+
     const val androidx_lifecycle_common_java8 = "androidx.lifecycle:lifecycle-common-java8:${Versions.androidx_lifecycleLibVersion}"
     const val androidx_paging =  "androidx.paging:paging-runtime:${Versions.androidx_pagingLibVersion}"
     const val androidx_paging_rxjava2 = "androidx.paging:paging-rxjava2:${Versions.androidx_pagingLibVersion}"

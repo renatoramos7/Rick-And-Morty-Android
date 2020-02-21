@@ -87,8 +87,8 @@ dependencies {
     api Dependencies.kotlinKTX
 
     // Android X Dependencies.
-    implementation Dependencies.androidx_appcompat
-    implementation Dependencies.androidx_constraintlayout
+    api Dependencies.androidx_appcompat
+    api Dependencies.androidx_constraintlayout
 
     // Dagger Dependencies.
     kapt Dependencies.dagger_compiler
@@ -104,7 +104,9 @@ dependencies {
 
     // Lifecycle components
     // ViewModel and LiveData
-    implementation Dependencies.androidx_lifecycle
+    api Dependencies.androidx_lifecycle_ktx
+    api Dependencies.androidx_viewmodel_ktx
+    api Dependencies.androidx_livedata_ktx
     annotationProcessor Dependencies.androidx_lifecycle_common_java8
 
     // ReactiveX Dependencies.
@@ -137,7 +139,7 @@ dependencies {
 
     // Test Dependencies.
     // JUnit
-/*    testImplementation Dependencies.junit
+   testImplementation Dependencies.junit
 
     //Mockito
     testImplementation Dependencies.mockito
@@ -153,6 +155,6 @@ dependencies {
 
     // Espresso
     androidTestImplementation Dependencies.androidx_test
-    androidTestImplementation Dependencies.androidx_test_espresso*/
+    androidTestImplementation Dependencies.androidx_test_espresso
 
 }

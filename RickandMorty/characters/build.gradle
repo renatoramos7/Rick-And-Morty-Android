@@ -83,7 +83,7 @@ android {
 }
 
 dependencies {
-    api fileTree(dir: 'libs', include: ['*.jar'])
+    //api fileTree(dir: 'libs', include: ['*.jar'])
 
     // Modules
     api project(':core')
