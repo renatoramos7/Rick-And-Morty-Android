@@ -120,11 +120,11 @@ dependencies {
     api Dependencies.retrofit2_adapter_rxjava2
 
     // Retrofit Converter
-    implementation Dependencies.retrofit2_converter_moshi
+    api Dependencies.retrofit2_converter_moshi
 
     // Moshi
-    implementation Dependencies.moshi
-    implementation Dependencies.moshi_kotlin
+    api Dependencies.moshi
+    api Dependencies.moshi_kotlin
 
     // OkHttp
     api Dependencies.okhttp

@@ -1,10 +1,9 @@
 package com.renatoramos.rickandmort.common.modular.di.module
 
 import android.app.Application
-import com.google.gson.FieldNamingPolicy
-import com.google.gson.Gson
-import com.google.gson.GsonBuilder
-import com.renatoramos.rickandmorty.common.BuildConfig
+import com.renatoramos.rickandmorty.BuildConfig
+import com.squareup.moshi.Moshi
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
 import dagger.Provides
 import okhttp3.Cache
@@ -12,7 +11,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
-import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.converter.moshi.MoshiConverterFactory
 import java.io.File
 import java.util.concurrent.TimeUnit
 import javax.inject.Named
@@ -29,7 +28,7 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    internal fun providesOkHttpCache(application: Application): Cache {
+    internal fun provideOkHttpCache(application: Application): Cache {
         val cacheSize = CACHE_SIZE_10_MB
         val httpCacheDirectory = File(application.cacheDir, CHILD_PATH)
         return Cache(httpCacheDirectory, cacheSize.toLong())
@@ -37,16 +36,15 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    internal fun providesGson(): Gson {
-        return GsonBuilder()
-            .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
-            .setDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
-            .create()
+    internal fun provideMoshi(): Moshi {
+        return Moshi.Builder()
+            .add(KotlinJsonAdapterFactory())
+            .build()
     }
 
     @Provides
     @Singleton
-    internal fun providesHttpLoggingInterceptor(): HttpLoggingInterceptor {
+    internal fun provideHttpLoggingInterceptor(): HttpLoggingInterceptor {
         val httpLoggingInterceptor = HttpLoggingInterceptor()
         httpLoggingInterceptor.level = if (BuildConfig.DEBUG) HttpLoggingInterceptor.Level.BODY else HttpLoggingInterceptor.Level.NONE
         return httpLoggingInterceptor
@@ -54,8 +52,7 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    internal fun providesOkHttpClient(cache: Cache, httpLoggingInterceptor: HttpLoggingInterceptor): OkHttpClient {
-
+    internal fun provideOkHttpClient(cache: Cache, httpLoggingInterceptor: HttpLoggingInterceptor): OkHttpClient {
         return OkHttpClient.Builder()
             .addInterceptor(httpLoggingInterceptor)
             .cache(cache)
@@ -67,26 +64,27 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    internal fun providesGsonConverterFactory(gson: Gson): GsonConverterFactory {
-        return GsonConverterFactory.create(gson)
+    internal fun provideMoshiConverterFactory(moshi: Moshi): MoshiConverterFactory {
+        return MoshiConverterFactory.create(moshi)
     }
 
     @Provides
     @Singleton
-    internal fun providesRxJava2CallAdapterFactory(): RxJava2CallAdapterFactory {
+    internal fun provideRxJava2CallAdapterFactory(): RxJava2CallAdapterFactory {
         return RxJava2CallAdapterFactory.create()
     }
 
     @Provides
     @Singleton
-    internal fun providesRetrofit(gsonConverterFactory: GsonConverterFactory, okHttpClient: OkHttpClient,
-                                  rxJava2CallAdapterFactory: RxJava2CallAdapterFactory,
-                                  @Named(SettingsModule.BASE_URL) baseUrl: String): Retrofit {
+    internal fun provideRetrofit(moshiConverterFactory: MoshiConverterFactory, okHttpClient: OkHttpClient,
+                                 rxJava2CallAdapterFactory: RxJava2CallAdapterFactory,
+                                 @Named(SettingsModule.BASE_URL) baseUrl: String): Retrofit {
         return Retrofit.Builder()
-            .addConverterFactory(gsonConverterFactory)
+            .addConverterFactory(moshiConverterFactory)
             .addCallAdapterFactory(rxJava2CallAdapterFactory)
             .baseUrl(baseUrl)
             .client(okHttpClient)
             .build()
     }
+
 }
