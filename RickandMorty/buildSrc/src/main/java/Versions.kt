@@ -4,7 +4,7 @@ object Versions {
     const val kotlin = "1.3.61"
 
     // Gradle
-    const val gradle = "3.5.3"
+    const val gradle = "3.6.0"
 
     // Android data Binding
     const val dataBindingLibVersion = "3.1.4"
@@ -56,7 +56,7 @@ object Versions {
     const val androidx_navigationLibVersion = "2.3.0-alpha01"
 
     //Kotlin KTX
-    const val kotlinKTXLibVersion = "1.1.0"
+    const val kotlinKTXLibVersion = "1.2.0"
 
     // Google Dependencies.
     const val supportLibVersion = "27.1.1"

@@ -91,8 +91,5 @@ dependencies {
     // Dagger Dependencies.
     kapt Dependencies.dagger_compiler
     kapt Dependencies.dagger_processor
-    //api Dependencies.dagger
-    //api Dependencies.dagger_android_support
-    //api Dependencies.dagger_android
 
 }

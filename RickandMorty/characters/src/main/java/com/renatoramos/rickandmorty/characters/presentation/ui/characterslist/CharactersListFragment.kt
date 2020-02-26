@@ -44,10 +44,7 @@ class CharactersListFragment : BaseFragment() {
         charactersListViewModel = ViewModelProvider(activity!!, viewModelFactory).get(CharactersListViewModel::class.java)
 
        charactersListFragmentBinding.let {
-            it.charactersListViewModelInView = charactersListViewModel
             it.lifecycleOwner = this
         }
     }
-
-
 }
