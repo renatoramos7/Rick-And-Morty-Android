@@ -85,8 +85,8 @@ object Versions {
     const val okhttp3LibVersion = "4.2.0"
 
     // Moshi
-    const val moshiLibVersion = "1.8.0"
-    const val converterMoshiLibVersion = "2.5.0"
+    const val moshiLibVersion = "1.9.2"
+    const val converterMoshiLibVersion = "2.7.2"
 
     // Image cache
     const val glideLibVersion = "4.11.0"

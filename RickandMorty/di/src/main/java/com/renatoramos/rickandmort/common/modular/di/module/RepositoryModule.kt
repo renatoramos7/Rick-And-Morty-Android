@@ -15,4 +15,6 @@ class RepositoryModule {
     fun providesPoiRepository(poiService: PoiService, poiRepositoryProvider: PoiRepositoryProvider): PoiRepository {
         return PoiRepository(poiService, poiRepositoryProvider)
     }
+
+
 }

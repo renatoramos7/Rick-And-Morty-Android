@@ -35,7 +35,6 @@ class CharactersListFragment : BaseFragment() {
         initView()
     }
 
-
     private fun initView() {
         bindViewModel()
     }

@@ -12,7 +12,7 @@ class SettingsModule {
     @Singleton
     @Named(BASE_URL)
     internal fun provideServerUrl(): String {
-        return "https://fake-poi-api.mytaxi.com/"
+        return "https://rickandmortyapi.com/api/"
     }
 
     companion object {
