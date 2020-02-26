@@ -1,7 +1,6 @@
 package com.renatoramos.rickandmorty.data.store.remote.retrofit.repository.poi
 
-import com.renatoramos.rickandmorty.data.store.local.paperdb.provider.PoiRepositoryProvider
-import com.renatoramos.rickandmorty.data.store.remote.retrofit.dto.poi.PoiListDTO
+import com.renatoramos.rickandmorty.data.store.local.paperdb.provider.BaseRepositoryProvider
 import com.renatoramos.rickandmorty.data.store.remote.retrofit.service.poi.PoiService
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Maybe
@@ -11,10 +10,11 @@ import javax.inject.Inject
 
 class PoiRepository @Inject constructor(
     private val reposService: PoiService,
-    private val poiRepositoryProvider: PoiRepositoryProvider
+    private val baseRepositoryProvider: BaseRepositoryProvider
 ) {
+    private val TAGKEY = PoiRepository::class.java.simpleName
 
-    fun requestRepositories(): Maybe<List<PoiListDTO>> {
+    fun requestRepositories(): Maybe<List<Any>> {
         val remote = getRepositoriesRemote()
         val local = getRepositoriesLocal()
 
@@ -24,14 +24,14 @@ class PoiRepository @Inject constructor(
     }
 
     /* Local Part */
-    private fun getRepositoriesLocal(): Observable<List<PoiListDTO>> {
-        return poiRepositoryProvider.getAll()
+    private fun getRepositoriesLocal(): Observable<List<Any>> {
+        return baseRepositoryProvider.getAll(TAGKEY)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
     }
 
     /* Remote Part */
-    private fun getRepositoriesRemote(): Observable<List<PoiListDTO>> {
+    private fun getRepositoriesRemote(): Observable<List<Any>> {
         return reposService.requestPoiList(
             "53.694865",
             "9.757589",
@@ -40,6 +40,6 @@ class PoiRepository @Inject constructor(
             .cache()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .concatMap { repos -> poiRepositoryProvider.add(repos.poiList) }
+            .concatMap { repos -> baseRepositoryProvider.add(repos.poiList, TAGKEY) }
     }
 }
