@@ -3,6 +3,7 @@ package com.renatoramos.rickandmorty.home.presentation.ui
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.widget.Toolbar
+import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
@@ -22,7 +23,7 @@ class HomeAppActivity : BaseActivity() {
     lateinit var viewModelFactory: ViewModelProvider.Factory
 
     private lateinit var homeAppViewModel: HomeAppViewModel
-    private lateinit var homeAppActivityFragmentBinding: ActivityMainBinding
+    private lateinit var homeAppActivityBinding: ActivityMainBinding
     private lateinit var navController: NavController
     private lateinit var homeToolbar : Toolbar
     private lateinit var homeBottomNavigationView : BottomNavigationView
@@ -33,7 +34,7 @@ class HomeAppActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        homeAppActivityBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         initView()
     }
     override fun onSupportNavigateUp(): Boolean {
@@ -50,14 +51,14 @@ class HomeAppActivity : BaseActivity() {
         homeAppViewModel = ViewModelProvider(this, viewModelFactory).get(
             HomeAppViewModel::class.java)
 
-       homeAppActivityFragmentBinding.let {
+       homeAppActivityBinding.let {
             it.lifecycleOwner = this
         }
     }
 
     private fun setUiComponents() {
-        homeToolbar = homeAppActivityFragmentBinding.homeToolbar
-        homeBottomNavigationView = homeAppActivityFragmentBinding.btmNavMain
+        homeToolbar = homeAppActivityBinding.homeToolbar
+        homeBottomNavigationView = homeAppActivityBinding.btmNavMain
         navController = findNavController(R.id.fragment_nav_host)
     }
 
