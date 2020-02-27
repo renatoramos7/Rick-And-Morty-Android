@@ -109,6 +109,10 @@ dependencies {
     api Dependencies.androidx_livedata_ktx
     annotationProcessor Dependencies.androidx_lifecycle_common_java8
 
+    // Android paging.
+    api Dependencies.androidx_paging
+    api Dependencies.androidx_paging_rxjava2
+
     // ReactiveX Dependencies.
     api Dependencies.rxjava3
     api Dependencies.rxandroid3

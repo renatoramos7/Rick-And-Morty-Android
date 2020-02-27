@@ -1,5 +1,4 @@
-package com.renatoramos.rickandmorty.data.store.local.paperdb.provider
-
+package com.renatoramos.rickandmorty.domain.data.store.local.paperdb.provider
 
 import io.paperdb.Paper
 import io.reactivex.rxjava3.core.Observable
@@ -7,7 +6,7 @@ import io.reactivex.rxjava3.core.Observable
 class BaseRepositoryProvider {
 
     fun add(repos: List<Any>, tagKey: String ): Observable<List<Any>> {
-        return Observable.create { e ->
+        return Observable.create{ e ->
             try {
                 Paper.book().delete(tagKey)
                 Paper.book().write(tagKey, repos)

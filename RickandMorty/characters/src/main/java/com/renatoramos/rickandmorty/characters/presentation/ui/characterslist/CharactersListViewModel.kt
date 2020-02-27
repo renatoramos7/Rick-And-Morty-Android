@@ -5,4 +5,12 @@ import javax.inject.Inject
 
 class CharactersListViewModel @Inject constructor(): BaseViewModel() {
 
+    override fun onCleared() {
+        super.onCleared()
+        onStopDisposable()
+    }
+
+
+
+
 }

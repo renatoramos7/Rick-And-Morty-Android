@@ -52,7 +52,7 @@ object Versions {
     const val androidx_constraintlayoutLibVersion = "1.1.3"
     const val androidx_recyclerviewLibVersion = "1.0.0"
     const val androidx_lifecycleLibVersion = "2.2.0"
-    const val androidx_pagingLibVersion = "2.1.0"
+    const val androidx_pagingLibVersion = "2.1.1"
     const val androidx_navigationLibVersion = "2.3.0-alpha01"
 
     //Kotlin KTX

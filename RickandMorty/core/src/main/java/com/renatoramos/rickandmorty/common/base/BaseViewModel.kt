@@ -7,7 +7,7 @@ import io.reactivex.rxjava3.disposables.Disposable
 
 abstract class BaseViewModel : ViewModel() {
 
-    private var mCompositeDisposable: CompositeDisposable? = null
+    private var compositeDisposable: CompositeDisposable? = null
 
     /**
      * Contains common cleanup actions needed for all ViewModel, if any.
@@ -22,9 +22,9 @@ abstract class BaseViewModel : ViewModel() {
     }
 
     private fun getCompositeDisposable(): CompositeDisposable {
-        if (mCompositeDisposable == null || mCompositeDisposable!!.isDisposed) {
-            mCompositeDisposable = CompositeDisposable()
+        if (compositeDisposable == null || compositeDisposable!!.isDisposed) {
+            compositeDisposable = CompositeDisposable()
         }
-        return mCompositeDisposable as CompositeDisposable
+        return compositeDisposable as CompositeDisposable
     }
 }

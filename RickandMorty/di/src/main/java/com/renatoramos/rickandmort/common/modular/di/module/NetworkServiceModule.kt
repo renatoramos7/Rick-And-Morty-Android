@@ -1,6 +1,7 @@
 package com.renatoramos.rickandmort.common.modular.di.module
 
-import com.renatoramos.rickandmorty.data.store.remote.retrofit.service.poi.PoiService
+import com.renatoramos.rickandmorty.domain.data.store.remote.retrofit.api.characters.CharactersApi
+import com.renatoramos.rickandmorty.domain.data.store.remote.retrofit.api.episodes.EpisodesApi
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
@@ -11,7 +12,14 @@ class NetworkServiceModule {
 
     @Provides
     @Singleton
-    fun providesReposService(retrofit: Retrofit): PoiService {
-        return retrofit.create(PoiService::class.java)
+    fun providesCharactersApi(retrofit: Retrofit): CharactersApi {
+        return retrofit.create(CharactersApi::class.java)
     }
+
+    @Provides
+    @Singleton
+    fun providesEpisodesApi(retrofit: Retrofit): EpisodesApi {
+        return retrofit.create(EpisodesApi::class.java)
+    }
+
 }
