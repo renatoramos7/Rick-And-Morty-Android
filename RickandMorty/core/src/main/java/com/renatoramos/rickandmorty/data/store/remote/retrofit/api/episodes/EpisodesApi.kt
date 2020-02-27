@@ -1,6 +1,6 @@
-package com.renatoramos.rickandmorty.domain.data.store.remote.retrofit.api.episodes
+package com.renatoramos.rickandmorty.data.store.remote.retrofit.api.episodes
 
-import com.renatoramos.rickandmorty.domain.data.store.dto.episodes.EpisodeDTO
+import com.renatoramos.rickandmorty.data.store.dto.episodes.EpisodeDTO
 import io.reactivex.rxjava3.core.Observable
 import retrofit2.http.GET
 import retrofit2.http.Path

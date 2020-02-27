@@ -1,6 +1,6 @@
-package com.renatoramos.rickandmorty.domain.data.store.dto.characters
+package com.renatoramos.rickandmorty.data.store.dto.characters
 
-import com.renatoramos.rickandmorty.domain.data.store.dto.locations.LocationShortDTO
+import com.renatoramos.rickandmorty.data.store.dto.locations.LocationShortDTO
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 

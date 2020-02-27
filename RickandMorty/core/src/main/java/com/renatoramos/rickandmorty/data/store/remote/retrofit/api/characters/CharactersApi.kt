@@ -1,4 +1,4 @@
-package com.renatoramos.rickandmorty.domain.data.store.remote.retrofit.api.characters
+package com.renatoramos.rickandmorty.data.store.remote.retrofit.api.characters
 
 import io.reactivex.rxjava3.core.Observable
 import retrofit2.http.GET

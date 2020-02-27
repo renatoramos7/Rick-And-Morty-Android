@@ -1,7 +1,7 @@
 package com.renatoramos.rickandmort.common.modular.di.module
 
-import com.renatoramos.rickandmorty.domain.data.store.remote.retrofit.api.characters.CharactersApi
-import com.renatoramos.rickandmorty.domain.data.store.remote.retrofit.api.episodes.EpisodesApi
+import com.renatoramos.rickandmorty.data.store.remote.retrofit.api.characters.CharactersApi
+import com.renatoramos.rickandmorty.data.store.remote.retrofit.api.episodes.EpisodesApi
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit

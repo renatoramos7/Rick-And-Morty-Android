@@ -1,4 +1,4 @@
-package com.renatoramos.rickandmorty.domain.data.store.local.paperdb.provider
+package com.renatoramos.rickandmorty.data.store.local.paperdb.provider
 
 import io.paperdb.Paper
 import io.reactivex.rxjava3.core.Observable

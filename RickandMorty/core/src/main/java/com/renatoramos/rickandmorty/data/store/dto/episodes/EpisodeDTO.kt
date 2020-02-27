@@ -1,4 +1,4 @@
-package com.renatoramos.rickandmorty.domain.data.store.dto.episodes
+package com.renatoramos.rickandmorty.data.store.dto.episodes
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass

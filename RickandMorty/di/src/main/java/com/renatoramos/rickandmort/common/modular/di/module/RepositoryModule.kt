@@ -1,10 +1,10 @@
 package com.renatoramos.rickandmort.common.modular.di.module
 
-import com.renatoramos.rickandmorty.domain.data.store.local.paperdb.provider.BaseRepositoryProvider
-import com.renatoramos.rickandmorty.domain.data.store.remote.retrofit.api.characters.CharactersApi
-import com.renatoramos.rickandmorty.domain.data.store.remote.retrofit.api.episodes.EpisodesApi
-import com.renatoramos.rickandmorty.domain.data.store.repository.characters.CharactersRepository
-import com.renatoramos.rickandmorty.domain.data.store.repository.episodes.EpisodesRepository
+import com.renatoramos.rickandmorty.data.store.local.paperdb.provider.BaseRepositoryProvider
+import com.renatoramos.rickandmorty.data.store.remote.retrofit.api.characters.CharactersApi
+import com.renatoramos.rickandmorty.data.store.remote.retrofit.api.episodes.EpisodesApi
+import com.renatoramos.rickandmorty.data.store.repository.characters.CharactersRepository
+import com.renatoramos.rickandmorty.data.store.repository.episodes.EpisodesRepository
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton

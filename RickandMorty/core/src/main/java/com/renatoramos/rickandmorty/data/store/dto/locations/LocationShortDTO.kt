@@ -1,4 +1,4 @@
-package com.renatoramos.rickandmorty.domain.data.store.dto.locations
+package com.renatoramos.rickandmorty.data.store.dto.locations
 
 data class LocationShortDTO(
     val name: String,
