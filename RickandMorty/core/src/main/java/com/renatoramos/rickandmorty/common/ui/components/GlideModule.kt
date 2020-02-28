@@ -1,4 +1,4 @@
-package com.renatoramos.rickandmort.common.modular.di.module
+package com.renatoramos.rickandmorty.common.ui.components
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -19,7 +19,6 @@ import com.bumptech.glide.signature.ObjectKey
 import okhttp3.OkHttpClient
 import java.io.InputStream
 import java.util.concurrent.TimeUnit
-
 
 @GlideModule
 class GlideModule : AppGlideModule() {
@@ -44,6 +43,8 @@ class GlideModule : AppGlideModule() {
     }
 
     private fun requestOptions(context: Context): RequestOptions {
+
+
         return RequestOptions()
             .signature(
                 ObjectKey(
