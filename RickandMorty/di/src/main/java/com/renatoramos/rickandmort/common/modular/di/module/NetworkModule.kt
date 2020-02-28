@@ -6,11 +6,11 @@ import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
 import dagger.Provides
+import hu.akarnokd.rxjava3.retrofit.RxJava3CallAdapterFactory
 import okhttp3.Cache
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
 import java.io.File
 import java.util.concurrent.TimeUnit
@@ -70,18 +70,18 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    internal fun provideRxJava2CallAdapterFactory(): RxJava2CallAdapterFactory {
-        return RxJava2CallAdapterFactory.create()
+    internal fun provideRxJava2CallAdapterFactory(): RxJava3CallAdapterFactory {
+        return RxJava3CallAdapterFactory.create()
     }
 
     @Provides
     @Singleton
     internal fun provideRetrofit(moshiConverterFactory: MoshiConverterFactory, okHttpClient: OkHttpClient,
-                                 rxJava2CallAdapterFactory: RxJava2CallAdapterFactory,
+                                 rxJava3CallAdapterFactory: RxJava3CallAdapterFactory,
                                  @Named(SettingsModule.BASE_URL) baseUrl: String): Retrofit {
         return Retrofit.Builder()
             .addConverterFactory(moshiConverterFactory)
-            .addCallAdapterFactory(rxJava2CallAdapterFactory)
+            .addCallAdapterFactory(rxJava3CallAdapterFactory)
             .baseUrl(baseUrl)
             .client(okHttpClient)
             .build()

@@ -121,7 +121,8 @@ object Dependencies {
     const val retrofit2_converter_moshi = "com.squareup.retrofit2:converter-moshi:${Versions.converterMoshiLibVersion}"
 
     /** RetroFit adapter **/
-    const val retrofit2_adapter_rxjava2 =  "com.squareup.retrofit2:adapter-rxjava2:${Versions.rxjavaAdapterLibVersion}"
+    const val retrofit2_adapter_rxjava2 =  "com.squareup.retrofit2:adapter-rxjava2:${Versions.rxjava2AdapterLibVersion}"
+    const val retrofit3_adapter_rxjava3 =  "com.github.akarnokd:rxjava3-retrofit-adapter:${Versions.rxjava3AdapterLibVersion}"
 
     /** Gson **/
     const val gson = "com.google.code.gson:gson:${Versions.gson}"

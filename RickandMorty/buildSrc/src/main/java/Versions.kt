@@ -78,7 +78,8 @@ object Versions {
     const val rxandroid2LibVersion = "2.1.1"
     const val rxjava2LibVersion = "2.2.8"
     const val rxjava3LibVersion = "3.0.0"
-    const val rxjavaAdapterLibVersion = "2.7.1"
+    const val rxjava2AdapterLibVersion = "2.7.1"
+    const val rxjava3AdapterLibVersion = "3.0.0-RC8"
 
     // Square Dependencies.
     const val retrofit2LibVersion = "2.7.2"
