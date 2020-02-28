@@ -1,6 +1,8 @@
 package com.renatoramos.rickandmorty.data.store.dto.characters
 
 import com.renatoramos.rickandmorty.data.store.dto.locations.LocationShortDTO
+import com.renatoramos.rickandmorty.data.store.dto.locations.toLocationShortViewObject
+import com.renatoramos.rickandmorty.domain.viewobject.characters.CharacterViewObject
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
@@ -19,4 +21,21 @@ data class CharacterDTO(
     val status: String,
     val type: String,
     val url: String
+): Any()
+
+fun CharacterDTO.toCharacterViewObject(): CharacterViewObject = CharacterViewObject(
+        created = this.created,
+        episodes = this.episodes,
+        gender = this.gender,
+        id = this.id,
+        image = this.image,
+        location = this.location.toLocationShortViewObject(),
+        origin = this.origin.toLocationShortViewObject(),
+        name = this.name,
+        species = this.species,
+        status = this.status,
+        type = this.type,
+        url = this.url
 )
+
+

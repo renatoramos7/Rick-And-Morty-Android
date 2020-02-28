@@ -81,8 +81,8 @@ object Versions {
     const val rxjavaAdapterLibVersion = "2.7.1"
 
     // Square Dependencies.
-    const val retrofit2LibVersion = "2.7.1"
-    const val okhttp3LibVersion = "4.2.0"
+    const val retrofit2LibVersion = "2.7.2"
+    const val okhttp3LibVersion = "4.4.0"
 
     // Moshi
     const val moshiLibVersion = "1.9.2"

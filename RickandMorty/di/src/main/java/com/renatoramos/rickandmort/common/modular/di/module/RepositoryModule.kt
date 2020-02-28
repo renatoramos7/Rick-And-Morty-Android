@@ -1,6 +1,6 @@
 package com.renatoramos.rickandmort.common.modular.di.module
 
-import com.renatoramos.rickandmorty.data.store.local.paperdb.provider.BaseRepositoryProvider
+import com.renatoramos.rickandmorty.data.store.local.paperdb.provider.characters.CharacterProvider
 import com.renatoramos.rickandmorty.data.store.remote.retrofit.api.characters.CharactersApi
 import com.renatoramos.rickandmorty.data.store.remote.retrofit.api.episodes.EpisodesApi
 import com.renatoramos.rickandmorty.data.store.repository.characters.CharactersRepository
@@ -16,18 +16,17 @@ class RepositoryModule {
     @Singleton
     fun providesCharactersRepository(
         charactersApi: CharactersApi,
-        baseRepositoryProvider: BaseRepositoryProvider
+        characterProvider: CharacterProvider
     ): CharactersRepository {
-        return CharactersRepository(charactersApi, baseRepositoryProvider)
+        return CharactersRepository(charactersApi, characterProvider)
     }
 
     @Provides
     @Singleton
     fun providesEpisodesRepository(
-        episodesApi: EpisodesApi,
-        baseRepositoryProvider: BaseRepositoryProvider
+        episodesApi: EpisodesApi
     ): EpisodesRepository {
-        return EpisodesRepository(episodesApi, baseRepositoryProvider)
+        return EpisodesRepository(episodesApi)
     }
 
 

@@ -1,20 +1,13 @@
 package com.renatoramos.rickandmorty.data.store.repository.episodes
 
-import com.renatoramos.rickandmorty.data.store.local.paperdb.provider.BaseRepositoryProvider
 import com.renatoramos.rickandmorty.data.store.remote.retrofit.api.episodes.EpisodesApi
-import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
-import io.reactivex.rxjava3.annotations.NonNull
-import io.reactivex.rxjava3.core.Maybe
-import io.reactivex.rxjava3.core.Observable
-import io.reactivex.rxjava3.schedulers.Schedulers
 import javax.inject.Inject
 
 class EpisodesRepository @Inject constructor(
-    private val episodesApi: EpisodesApi,
-    private val baseRepositoryProvider: BaseRepositoryProvider
+    private val episodesApi: EpisodesApi
 ) {
 
-    private val TAGKEY = EpisodesRepository::class.java.simpleName
+    /*private val TAGKEY = EpisodesRepository::class.java.simpleName
 
     fun requestRepositories(page: Int): @NonNull Maybe<List<Any>>? {
         val remote = getAllEpisodesRemote(page)
@@ -25,21 +18,21 @@ class EpisodesRepository @Inject constructor(
             .firstElement()
     }
 
-    /* Local Part */
+    *//* Local Part *//*
     private fun getAllEpisodesLocal(page: Int): Observable<List<Any>> {
-        return baseRepositoryProvider.getAll(TAGKEY)
+        return characterProvider.getAll(page, TAGKEY)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
     }
 
-    /* Remote Part */
+    *//* Remote Part *//*
     private fun getAllEpisodesRemote(page: Int): Observable<List<Any>> {
         return episodesApi.getAllEpisodes(page)
             .cache()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .concatMap { repos -> baseRepositoryProvider.add(repos, TAGKEY) }
-    }
+            .concatMap { repos -> characterProvider.add(repos, TAGKEY) }
+    }*/
 
 
 }

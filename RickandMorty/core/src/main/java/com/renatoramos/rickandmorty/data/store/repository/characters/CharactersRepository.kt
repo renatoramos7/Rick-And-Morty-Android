@@ -1,6 +1,7 @@
 package com.renatoramos.rickandmorty.data.store.repository.characters
 
-import com.renatoramos.rickandmorty.data.store.local.paperdb.provider.BaseRepositoryProvider
+import com.renatoramos.rickandmorty.data.store.dto.characters.CharacterDTO
+import com.renatoramos.rickandmorty.data.store.local.paperdb.provider.characters.CharacterProvider
 import com.renatoramos.rickandmorty.data.store.remote.retrofit.api.characters.CharactersApi
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.annotations.NonNull
@@ -11,11 +12,11 @@ import javax.inject.Inject
 
 class CharactersRepository @Inject constructor(
     private val charactersApi: CharactersApi,
-    private val baseRepositoryProvider: BaseRepositoryProvider
+    private val characterProvider: CharacterProvider
 ) {
     private val TAGKEY = CharactersRepository::class.java.simpleName
 
-    fun requestRepositories(page: Int): @NonNull Maybe<List<Any>>? {
+    fun requestAllCharacters(page: Int): @NonNull Maybe<List<CharacterDTO>> {
         val remote = getAllCharactersRemote(page)
         val local = getAllCharactersLocal(page)
 
@@ -25,19 +26,19 @@ class CharactersRepository @Inject constructor(
     }
 
     /* Local Part */
-    private fun getAllCharactersLocal(page: Int): Observable<List<Any>> {
-        return baseRepositoryProvider.getAll(TAGKEY)
+    private fun getAllCharactersLocal(page: Int): Observable<List<CharacterDTO>> {
+        return characterProvider.getAll(page, TAGKEY)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
     }
 
     /* Remote Part */
-    private fun getAllCharactersRemote(page: Int): Observable<List<Any>> {
+    private fun getAllCharactersRemote(page: Int): Observable<List<CharacterDTO>> {
         return charactersApi.getAllCharacters(page)
             .cache()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .concatMap { repos -> baseRepositoryProvider.add(repos, TAGKEY) }
+            .concatMap { repos -> characterProvider.add(repos, page, TAGKEY) }
     }
 }
 
