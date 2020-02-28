@@ -6,6 +6,7 @@ import com.renatoramos.rickandmort.common.modular.di.module.ApplicationModule
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasAndroidInjector
+import io.paperdb.Paper
 import javax.inject.Inject
 
 class MainApplication : Application(), HasAndroidInjector {
@@ -24,6 +25,7 @@ class MainApplication : Application(), HasAndroidInjector {
 
     private fun init() {
         initDagger()
+        initPaperDb()
     }
 
     private fun initDagger() {
@@ -33,6 +35,10 @@ class MainApplication : Application(), HasAndroidInjector {
             .applicationModule(ApplicationModule(this))
             .build()
             .inject(this)
+    }
+
+    private fun initPaperDb(){
+        Paper.init(this)
     }
 
 }
