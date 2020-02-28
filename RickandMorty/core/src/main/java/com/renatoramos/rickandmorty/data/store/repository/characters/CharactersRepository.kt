@@ -38,7 +38,7 @@ class CharactersRepository @Inject constructor(
             .cache()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .concatMap { repos -> characterProvider.add(repos, page, TAGKEY) }
+            .concatMap { repos -> characterProvider.add(repos.results, page, TAGKEY) }
     }
 }
 
