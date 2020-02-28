@@ -1,8 +1,9 @@
 package com.renatoramos.rickandmorty.common.extensions
 
 import android.widget.ImageView
+import com.renatoramos.rickandmorty.common.modular.di.module.GlideApp
 import com.renatoramos.rickandmorty.common.ui.components.DrawableRequestListener
-import com.renatoramos.rickandmorty.common.ui.components.GlideApp
+
 
 
 fun ImageView.loadWithGlide(url: String) {

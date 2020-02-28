@@ -1,4 +1,4 @@
-package com.renatoramos.rickandmorty.common.ui.components
+package com.renatoramos.rickandmorty.common.modular.di.module
 
 import android.content.Context
 import android.graphics.Bitmap
