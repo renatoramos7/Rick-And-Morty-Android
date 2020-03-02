@@ -50,10 +50,10 @@ class CharactersListFragment : BaseFragment(), CharactersListListener {
 
     private fun initView() {
         bindViewModel()
-        setObservables()
         setupRecyclerView()
         initialize()
         getAllCharacters()
+        setObservables()
     }
 
     private fun bindViewModel() {
