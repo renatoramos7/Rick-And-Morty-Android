@@ -12,7 +12,6 @@ import com.renatoramos.rickandmorty.characters.databinding.FragmentCharactersLis
 import com.renatoramos.rickandmorty.common.base.BaseFragment
 import javax.inject.Inject
 
-
 class CharactersListFragment : BaseFragment() {
 
     @Inject
@@ -23,8 +22,10 @@ class CharactersListFragment : BaseFragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?): View? {
-        charactersListFragmentBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_characters_list, container, false)
+        savedInstanceState: Bundle?
+    ): View? {
+        charactersListFragmentBinding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_characters_list, container, false)
 
         // Inflate the layout for this fragment
         return charactersListFragmentBinding.root
@@ -37,13 +38,20 @@ class CharactersListFragment : BaseFragment() {
 
     private fun initView() {
         bindViewModel()
+        getAllCharacters()
     }
 
     private fun bindViewModel() {
-        charactersListViewModel = ViewModelProvider(activity!!, viewModelFactory).get(CharactersListViewModel::class.java)
+        charactersListViewModel =
+            ViewModelProvider(activity!!, viewModelFactory).get(CharactersListViewModel::class.java)
 
-       charactersListFragmentBinding.let {
+        charactersListFragmentBinding.let {
             it.lifecycleOwner = this
         }
     }
+
+    private fun getAllCharacters() {
+        charactersListViewModel.getAllCharacters()
+    }
+
 }

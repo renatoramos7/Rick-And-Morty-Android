@@ -13,7 +13,7 @@ class CharactersUseCase @Inject constructor(
 
     fun requestAllCharacters(page: Int): Maybe<MutableList<CharacterViewObject>> {
         return charactersRepository.requestAllCharacters(page).map { characterList ->
-             characterList.map { it.toCharacterViewObject() }.toMutableList()
+            characterList.map { it.toCharacterViewObject() }.toMutableList()
         }
     }
 
