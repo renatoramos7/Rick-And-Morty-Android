@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.renatoramos.rickandmorty.common.modular.di.annotation.ViewModelKey
 import com.renatoramos.rickandmort.common.modular.di.factory.ViewModelFactory
-import com.renatoramos.rickandmorty.characters.presentation.ui.characterslist.CharactersListViewModel
+import com.renatoramos.rickandmorty.characters.presentation.ui.feature.characterslist.CharactersListViewModel
 import com.renatoramos.rickandmorty.home.presentation.ui.HomeAppViewModel
 import dagger.Binds
 import dagger.Module

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <TextView
+            android:text="repoNameTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/repoNameTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/MAIN_GUIDE_VIEW_HOLDER_LAYOUT_MARGIN_TOP"
+            android:layout_marginLeft="@dimen/MAIN_GUIDE_VIEW_HOLDER_LAYOUT_MARGIN_TOP"
+            android:layout_marginStart="@dimen/MAIN_GUIDE_VIEW_HOLDER_LAYOUT_MARGIN_TOP"
+            android:layout_marginRight="@dimen/MAIN_GUIDE_VIEW_HOLDER_LAYOUT_MARGIN_TOP"
+            android:layout_marginEnd="@dimen/MAIN_GUIDE_VIEW_HOLDER_LAYOUT_MARGIN_TOP"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+            android:text="description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/description"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/repoNameTextView"
+            android:layout_marginLeft="@dimen/MAIN_GUIDE_VIEW_HOLDER_LAYOUT_MARGIN_TOP"
+            android:layout_marginStart="@dimen/MAIN_GUIDE_VIEW_HOLDER_LAYOUT_MARGIN_TOP"
+            android:layout_marginRight="@dimen/MAIN_GUIDE_VIEW_HOLDER_LAYOUT_MARGIN_TOP"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/MAIN_GUIDE_VIEW_HOLDER_LAYOUT_MARGIN_TOP"
+            android:layout_marginTop="@dimen/MAIN_GUIDE_VIEW_HOLDER_LAYOUT_MARGIN_TOP"/>
+
+    <TextView
+            android:text="loginOwneTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/loginOwneTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/description"
+            android:layout_marginTop="@dimen/MAIN_GUIDE_VIEW_HOLDER_LAYOUT_MARGIN_TOP"
+            android:layout_marginLeft="@dimen/MAIN_GUIDE_VIEW_HOLDER_LAYOUT_MARGIN_TOP"
+            android:layout_marginStart="@dimen/MAIN_GUIDE_VIEW_HOLDER_LAYOUT_MARGIN_TOP"
+            android:layout_marginRight="@dimen/MAIN_GUIDE_VIEW_HOLDER_LAYOUT_MARGIN_TOP"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/MAIN_GUIDE_VIEW_HOLDER_LAYOUT_MARGIN_TOP"
+            android:layout_marginBottom="@dimen/MAIN_GUIDE_VIEW_HOLDER_LAYOUT_MARGIN_TOP"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <View
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/MAIN_GUIDE_VIEW_HOLDER_DIVIDE_VIEW_LAYOUT_HEIGHT"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_alignParentBottom="true"
+            android:background="@color/black"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

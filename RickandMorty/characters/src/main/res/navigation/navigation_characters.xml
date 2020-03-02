@@ -8,7 +8,7 @@
     tools:ignore="UnusedNavigation">
 
     <fragment android:id="@+id/characters_list_fragment"
-        android:name="com.renatoramos.rickandmorty.characters.presentation.ui.characterslist.CharactersListFragment"
+        android:name="com.renatoramos.rickandmorty.characters.presentation.ui.feature.characterslist.CharactersListFragment"
         tools:layout="@layout/fragment_characters_list"
         android:label="Characters"
         >

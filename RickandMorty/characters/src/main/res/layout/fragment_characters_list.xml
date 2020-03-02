@@ -6,19 +6,33 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:animateLayoutChanges="true">
+        android:animateLayoutChanges="true"
+        tools:context=".presentation.ui.">
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/reposRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="289dp"
-            android:layout_height="147dp"
-            android:layout_marginBottom="112dp"
-            android:text="Button"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="@dimen/PROGRESSBAR_LAYOUT_WIDTH"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/reposRecyclerView"
+            app:layout_constraintEnd_toEndOf="@+id/reposRecyclerView"
+            app:layout_constraintStart_toStartOf="@+id/reposRecyclerView"
+            app:layout_constraintTop_toTopOf="@+id/reposRecyclerView" />
+
+        <TextView
+            android:id="@+id/txt_error"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="ERROR !! Tap to retry." />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 </layout>

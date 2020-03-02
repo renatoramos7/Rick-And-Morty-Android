@@ -1,6 +1,6 @@
 package com.renatoramos.rickandmort.common.modular.di.builder
 
-import com.renatoramos.rickandmorty.characters.presentation.ui.characterslist.CharactersListFragment
+import com.renatoramos.rickandmorty.characters.presentation.ui.feature.characterslist.CharactersListFragment
 import com.renatoramos.rickandmorty.common.modular.di.annotation.FragmentScope
 import dagger.Module
 import dagger.android.ContributesAndroidInjector

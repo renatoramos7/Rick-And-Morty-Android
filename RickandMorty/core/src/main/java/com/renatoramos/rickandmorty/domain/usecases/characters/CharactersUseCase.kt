@@ -10,7 +10,6 @@ import javax.inject.Inject
 class CharactersUseCase @Inject constructor(
     private val charactersRepository: CharactersRepository
 ) {
-
     fun requestAllCharacters(page: Int): Maybe<MutableList<CharacterViewObject>> {
         return charactersRepository.requestAllCharacters(page).map { characterList ->
             characterList.map { it.toCharacterViewObject() }.toMutableList()

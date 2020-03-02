@@ -21,7 +21,7 @@ abstract class BaseViewModel : ViewModel() {
         getCompositeDisposable().add(disposable)
     }
 
-    private fun getCompositeDisposable(): CompositeDisposable {
+    protected fun getCompositeDisposable(): CompositeDisposable {
         if (compositeDisposable == null || compositeDisposable!!.isDisposed) {
             compositeDisposable = CompositeDisposable()
         }
