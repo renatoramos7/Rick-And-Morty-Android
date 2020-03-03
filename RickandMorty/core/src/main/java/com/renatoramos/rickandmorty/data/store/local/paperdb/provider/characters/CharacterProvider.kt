@@ -2,7 +2,8 @@ package com.renatoramos.rickandmorty.data.store.local.paperdb.provider.character
 
 import com.renatoramos.rickandmorty.data.store.dto.characters.CharacterDTO
 import io.paperdb.Paper
-import io.reactivex.rxjava3.core.Observable
+import io.reactivex.Observable
+
 
 class CharacterProvider {
 

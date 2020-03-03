@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.paging.DataSource
 import com.renatoramos.rickandmorty.domain.usecases.characters.CharactersUseCase
 import com.renatoramos.rickandmorty.domain.viewobject.characters.CharacterViewObject
-import io.reactivex.rxjava3.disposables.CompositeDisposable
+import io.reactivex.disposables.CompositeDisposable
 
 class CharactersDataSourceFactory (
     private val compositeDisposable: CompositeDisposable,

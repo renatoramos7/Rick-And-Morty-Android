@@ -26,19 +26,19 @@ private val charactersListListener: CharactersListListener
 
         if (viewType == DATA_VIEW_TYPE) {
             viewHolder = CharactersViewHolder.create(parent)
-            viewHolder.itemView.isLongClickable = true
+            //viewHolder.itemView.isLongClickable = true
 
-            viewHolder.itemView.setOnLongClickListener {
+           /* viewHolder.itemView.setOnLongClickListener {
                 val CharacterViewObject = getItem(viewHolder.adapterPosition)
 
-              /*  charactersListListener.onItemLongClickRepo(
+              *//*  charactersListListener.onItemLongClickRepo(
                     CharacterViewObject!!.htmlUrl!!,
                     CharacterViewObject.owner!!.htmlUrl!!
-                )*/
+                )*//*
 
 
                 true
-            }
+            }*/
         } else {
             viewHolder = ListFooterViewHolder.create(retry, parent)
         }

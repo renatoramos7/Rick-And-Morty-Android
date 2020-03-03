@@ -43,8 +43,6 @@ class GlideModule : AppGlideModule() {
     }
 
     private fun requestOptions(context: Context): RequestOptions {
-
-
         return RequestOptions()
             .signature(
                 ObjectKey(
@@ -53,7 +51,7 @@ class GlideModule : AppGlideModule() {
             )
             .override(200, 200)
             .centerCrop()
-            .encodeFormat(Bitmap.CompressFormat.PNG)
+            .encodeFormat(Bitmap.CompressFormat.WEBP)
             .encodeQuality(100)
             .diskCacheStrategy(DiskCacheStrategy.RESOURCE)
             .format(DecodeFormat.PREFER_ARGB_8888)

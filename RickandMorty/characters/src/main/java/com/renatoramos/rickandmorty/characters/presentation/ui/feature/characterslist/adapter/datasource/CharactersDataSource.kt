@@ -5,11 +5,11 @@ import androidx.paging.PageKeyedDataSource
 import com.renatoramos.rickandmorty.common.util.State
 import com.renatoramos.rickandmorty.domain.usecases.characters.CharactersUseCase
 import com.renatoramos.rickandmorty.domain.viewobject.characters.CharacterViewObject
-import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
-import io.reactivex.rxjava3.core.Completable
-import io.reactivex.rxjava3.disposables.CompositeDisposable
-import io.reactivex.rxjava3.functions.Action
-import io.reactivex.rxjava3.schedulers.Schedulers
+import io.reactivex.Completable
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.functions.Action
+import io.reactivex.schedulers.Schedulers
 
 
 class CharactersDataSource(
@@ -20,7 +20,10 @@ class CharactersDataSource(
     var state: MutableLiveData<State> = MutableLiveData()
     private var retryCompletable: Completable? = null
 
-    override fun loadInitial(params: LoadInitialParams<Int>, callback: LoadInitialCallback<Int, CharacterViewObject>) {
+    override fun loadInitial(
+        params: LoadInitialParams<Int>,
+        callback: LoadInitialCallback<Int, CharacterViewObject>
+    ) {
         updateState(State.LOADING)
         compositeDisposable.add(
             charactersUseCase.requestAllCharacters(1)
@@ -41,30 +44,53 @@ class CharactersDataSource(
         )
     }
 
-    override fun loadAfter(params: LoadParams<Int>, callback: LoadCallback<Int, CharacterViewObject>) {
+    override fun loadAfter(
+        params: LoadParams<Int>,
+        callback: LoadCallback<Int, CharacterViewObject>
+    ) {
         updateState(State.LOADING)
 
-        compositeDisposable.add(
-            charactersUseCase.requestAllCharacters(params.key)
-                .subscribe(
-                    { response ->
-                        updateState(State.DONE)
-                        callback.onResult(
-                            response,
-                            params.key + 1
-                        )
-                    },
-                    {
-                        updateState(State.ERROR)
-                        setRetry(Action { loadAfter(params, callback) })
-                    }
-                )
-        )
+        if (params.key == 26) {
+            compositeDisposable.add(
+                charactersUseCase.requestAllCharacters(params.key)
+                    .subscribe(
+                        { response ->
+                            updateState(State.DONE)
+                            callback.onResult(
+                                response,
+                                params.key + 1
+                            )
+                        }, {
+                            updateState(State.ERROR)
+                            setRetry(Action { loadAfter(params, callback) })
+                        }
+                    )
+            )
 
-
+        } else {
+            compositeDisposable.add(
+                charactersUseCase.requestAllCharacters(params.key)
+                    .subscribe(
+                        { response ->
+                            updateState(State.DONE)
+                            callback.onResult(
+                                response,
+                                params.key + 1
+                            )
+                        }, {
+                            updateState(State.ERROR)
+                            setRetry(Action { loadAfter(params, callback) })
+                        }
+                    )
+            )
+        }
     }
 
-    override fun loadBefore(params: LoadParams<Int>, callback: LoadCallback<Int, CharacterViewObject>) {}
+    override fun loadBefore(
+        params: LoadParams<Int>,
+        callback: LoadCallback<Int, CharacterViewObject>
+    ) {
+    }
 
     private fun updateState(state: State) {
         this.state.postValue(state)

@@ -3,7 +3,7 @@ package com.renatoramos.rickandmorty.domain.usecases.characters
 import com.renatoramos.rickandmorty.data.store.dto.characters.toCharacterViewObject
 import com.renatoramos.rickandmorty.data.store.repository.characters.CharactersRepository
 import com.renatoramos.rickandmorty.domain.viewobject.characters.CharacterViewObject
-import io.reactivex.rxjava3.core.Maybe
+import io.reactivex.Maybe
 import javax.inject.Inject
 
 

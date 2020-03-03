@@ -114,15 +114,14 @@ dependencies {
     api Dependencies.androidx_paging_rxjava2
 
     // ReactiveX Dependencies.
-    api Dependencies.rxjava3
-    api Dependencies.rxandroid3
+    api Dependencies.rxjava2
+    api Dependencies.rxandroid2
 
     // Retrofit.
     api Dependencies.retrofit2
 
     // RetroFit adapter
-    //api Dependencies.retrofit2_adapter_rxjava2
-    api Dependencies.retrofit3_adapter_rxjava3
+    api Dependencies.retrofit2_adapter_rxjava2
 
     // Retrofit Converter
     api Dependencies.retrofit2_converter_moshi

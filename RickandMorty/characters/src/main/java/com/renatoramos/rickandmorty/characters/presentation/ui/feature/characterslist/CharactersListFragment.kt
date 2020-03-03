@@ -10,6 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.renatoramos.rickandmorty.characters.R
 import com.renatoramos.rickandmorty.characters.databinding.FragmentCharactersListBinding
 import com.renatoramos.rickandmorty.characters.presentation.ui.feature.characterslist.adapter.CharactersListAdapter
@@ -87,8 +88,10 @@ class CharactersListFragment : BaseFragment(), CharactersListListener {
 
     private fun setupRecyclerView() {
         reposRecyclerView = charactersListFragmentBinding.reposRecyclerView
-        reposRecyclerView.layoutManager = LinearLayoutManager(activity?.baseContext, RecyclerView.VERTICAL, false)
+        reposRecyclerView.layoutManager = LinearLayoutManager(activity?.baseContext)
+        reposRecyclerView.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
         reposRecyclerView.setHasFixedSize(true)
+
 
         charactersListAdapter = CharactersListAdapter(
             { charactersListViewModel.retry() },

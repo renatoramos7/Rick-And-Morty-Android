@@ -3,11 +3,10 @@ package com.renatoramos.rickandmorty.data.store.repository.characters
 import com.renatoramos.rickandmorty.data.store.dto.characters.CharacterDTO
 import com.renatoramos.rickandmorty.data.store.local.paperdb.provider.characters.CharacterProvider
 import com.renatoramos.rickandmorty.data.store.remote.retrofit.api.characters.CharactersApi
-import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
-import io.reactivex.rxjava3.annotations.NonNull
-import io.reactivex.rxjava3.core.Maybe
-import io.reactivex.rxjava3.core.Observable
-import io.reactivex.rxjava3.schedulers.Schedulers
+import io.reactivex.Maybe
+import io.reactivex.Observable
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
 class CharactersRepository @Inject constructor(
@@ -16,7 +15,7 @@ class CharactersRepository @Inject constructor(
 ) {
     private val TAGKEY = CharactersRepository::class.java.simpleName
 
-    fun requestAllCharacters(page: Int): @NonNull Maybe<List<CharacterDTO>> {
+    fun requestAllCharacters(page: Int): Maybe<List<CharacterDTO>> {
         val remote = getAllCharactersRemote(page)
         val local = getAllCharactersLocal(page)
 
@@ -38,7 +37,9 @@ class CharactersRepository @Inject constructor(
             .cache()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .concatMap { repos -> characterProvider.add(repos.results, page, TAGKEY) }
+            .concatMap { repos ->
+                characterProvider.add(repos.results, page, TAGKEY)
+            }
     }
 }
 
