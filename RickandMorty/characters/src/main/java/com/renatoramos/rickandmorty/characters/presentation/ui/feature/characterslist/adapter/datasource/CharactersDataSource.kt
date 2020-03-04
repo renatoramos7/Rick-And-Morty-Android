@@ -35,8 +35,7 @@ class CharactersDataSource(
                             null,
                             2
                         )
-                    },
-                    {
+                    }, {
                         updateState(State.ERROR)
                         setRetry(Action { loadInitial(params, callback) })
                     }
@@ -66,7 +65,6 @@ class CharactersDataSource(
                         }
                     )
             )
-
         } else {
             compositeDisposable.add(
                 charactersUseCase.requestAllCharacters(params.key)

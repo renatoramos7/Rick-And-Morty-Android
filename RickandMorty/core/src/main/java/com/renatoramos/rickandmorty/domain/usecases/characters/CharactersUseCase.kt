@@ -15,5 +15,4 @@ class CharactersUseCase @Inject constructor(
             characterList.map { it.toCharacterViewObject() }.toMutableList()
         }
     }
-
 }
