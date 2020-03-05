@@ -10,7 +10,7 @@
         tools:context=".presentation.ui.">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/reposRecyclerView"
+            android:id="@+id/charactersRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_constraintTop_toTopOf="parent"/>
@@ -21,10 +21,10 @@
             android:layout_width="@dimen/PROGRESSBAR_LAYOUT_WIDTH"
             android:layout_height="wrap_content"
             android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="@+id/reposRecyclerView"
-            app:layout_constraintEnd_toEndOf="@+id/reposRecyclerView"
-            app:layout_constraintStart_toStartOf="@+id/reposRecyclerView"
-            app:layout_constraintTop_toTopOf="@+id/reposRecyclerView" />
+            app:layout_constraintBottom_toBottomOf="@+id/charactersRecyclerView"
+            app:layout_constraintEnd_toEndOf="@+id/charactersRecyclerView"
+            app:layout_constraintStart_toStartOf="@+id/charactersRecyclerView"
+            app:layout_constraintTop_toTopOf="@+id/charactersRecyclerView" />
 
         <TextView
             android:id="@+id/txt_error"

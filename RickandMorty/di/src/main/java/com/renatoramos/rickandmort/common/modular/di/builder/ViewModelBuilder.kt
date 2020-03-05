@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.renatoramos.rickandmorty.common.modular.di.annotation.ViewModelKey
 import com.renatoramos.rickandmort.common.modular.di.factory.ViewModelFactory
 import com.renatoramos.rickandmorty.characters.presentation.ui.feature.characterslist.CharactersListViewModel
+import com.renatoramos.rickandmorty.episodes.presentation.ui.episodeslist.EpisodesListViewModel
 import com.renatoramos.rickandmorty.home.presentation.ui.HomeAppViewModel
 import dagger.Binds
 import dagger.Module
@@ -25,12 +26,13 @@ abstract class ViewModelBuilder {
     @Binds
     @IntoMap
     @ViewModelKey(CharactersListViewModel::class)
-    internal abstract  fun bindCharactersListViewModel(mainAppViewModel: CharactersListViewModel): ViewModel
+    internal abstract  fun bindCharactersListViewModel(charactersListViewModel: CharactersListViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(EpisodesListViewModel::class)
+    internal abstract  fun bindEpisodesListViewModel(episodesListViewModel: EpisodesListViewModel): ViewModel
 
 
-    /* @Binds
-     @IntoMap
-     @ViewModelKey(VehicleMapsViewModel::class)
-     internal abstract  fun bindVehicleMapsViewModel(vehicleMapsViewModel: VehicleMapsViewModel): ViewModel*/
 
 }

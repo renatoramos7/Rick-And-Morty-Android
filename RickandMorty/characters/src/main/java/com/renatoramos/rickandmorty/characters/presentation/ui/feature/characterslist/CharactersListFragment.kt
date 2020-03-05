@@ -9,7 +9,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.renatoramos.rickandmorty.characters.R
 import com.renatoramos.rickandmorty.characters.databinding.FragmentCharactersListBinding
@@ -26,7 +25,6 @@ class CharactersListFragment : BaseFragment(), CharactersListListener {
 
     private lateinit var charactersListViewModel: CharactersListViewModel
     private lateinit var charactersListFragmentBinding: FragmentCharactersListBinding
-    private lateinit var reposRecyclerView: RecyclerView
     private lateinit var charactersListAdapter: CharactersListAdapter
 
     override fun onCreateView(
@@ -87,10 +85,9 @@ class CharactersListFragment : BaseFragment(), CharactersListListener {
     }
 
     private fun setupRecyclerView() {
-        reposRecyclerView = charactersListFragmentBinding.reposRecyclerView
-        reposRecyclerView.layoutManager = LinearLayoutManager(activity?.baseContext)
-        reposRecyclerView.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
-        reposRecyclerView.setHasFixedSize(true)
+        charactersListFragmentBinding.charactersRecyclerView.layoutManager = LinearLayoutManager(activity?.baseContext)
+        charactersListFragmentBinding.charactersRecyclerView.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+        charactersListFragmentBinding.charactersRecyclerView.setHasFixedSize(true)
 
 
         charactersListAdapter = CharactersListAdapter(
@@ -98,7 +95,7 @@ class CharactersListFragment : BaseFragment(), CharactersListListener {
             this
         )
 
-        reposRecyclerView.adapter = charactersListAdapter
+        charactersListFragmentBinding.charactersRecyclerView.adapter = charactersListAdapter
     }
 
     private fun getAllCharacters() {
