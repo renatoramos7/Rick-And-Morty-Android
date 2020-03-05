@@ -16,7 +16,7 @@ class CharactersListViewModel @Inject constructor(private val charactersUseCase:
     BaseViewModel() {
 
      lateinit var reposListLiveData: LiveData<PagedList<CharacterViewObject>>
-     lateinit var charactersDataSourceFactory: CharactersDataSourceFactory
+    private lateinit var charactersDataSourceFactory: CharactersDataSourceFactory
      private val pageSize = 20
 
     override fun onCleared() {
