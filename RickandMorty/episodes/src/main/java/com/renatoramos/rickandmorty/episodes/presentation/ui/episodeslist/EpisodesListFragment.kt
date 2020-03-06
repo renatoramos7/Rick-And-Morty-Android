@@ -8,7 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.renatoramos.rickandmorty.common.base.BaseFragment
 import com.renatoramos.rickandmorty.common.util.State
 import com.renatoramos.rickandmorty.episodes.R
@@ -87,9 +87,8 @@ class EpisodesListFragment : BaseFragment(), EpisodesListListener {
 
     private fun setupRecyclerView() {
         episodesListFragmentBinding.episodesRecyclerView.layoutManager = LinearLayoutManager(activity?.baseContext)
-        episodesListFragmentBinding.episodesRecyclerView.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+        episodesListFragmentBinding.episodesRecyclerView.layoutManager  = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
         episodesListFragmentBinding.episodesRecyclerView.setHasFixedSize(true)
-
 
         episodesListAdapter = EpisodesListAdapter(
             { episodesListViewModel.retry() },
