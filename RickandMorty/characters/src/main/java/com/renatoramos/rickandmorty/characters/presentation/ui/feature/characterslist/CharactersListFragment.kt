@@ -45,8 +45,8 @@ class CharactersListFragment : BaseFragment(), CharactersListListener {
         initView()
     }
 
-    override fun onItemClick(repositoryUrl: String, ownerUrl: String) {
-        context?.makeTextToast("Coming soon",  Toast.LENGTH_LONG)
+    override fun onItemClick(repositoryUrl: String) {
+        context?.makeTextToast("Coming soon: $repositoryUrl", Toast.LENGTH_LONG)
     }
 
     private fun initView() {
@@ -87,8 +87,10 @@ class CharactersListFragment : BaseFragment(), CharactersListListener {
     }
 
     private fun setupRecyclerView() {
-        charactersListFragmentBinding.charactersRecyclerView.layoutManager = LinearLayoutManager(activity?.baseContext)
-        charactersListFragmentBinding.charactersRecyclerView.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+        charactersListFragmentBinding.charactersRecyclerView.layoutManager =
+            LinearLayoutManager(activity?.baseContext)
+        charactersListFragmentBinding.charactersRecyclerView.layoutManager =
+            StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
         charactersListFragmentBinding.charactersRecyclerView.setHasFixedSize(true)
 
 

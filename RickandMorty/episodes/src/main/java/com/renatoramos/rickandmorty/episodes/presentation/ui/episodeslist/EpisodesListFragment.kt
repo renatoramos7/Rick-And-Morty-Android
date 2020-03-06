@@ -44,8 +44,8 @@ class EpisodesListFragment : BaseFragment(), EpisodesListListener {
         initView()
     }
 
-    override fun onItemClick(repositoryUrl: String, ownerUrl: String) {
-        context?.makeTextToast("Coming soon",  Toast.LENGTH_LONG)
+    override fun onItemClick(repositoryUrl: String) {
+        context?.makeTextToast("Coming soon: $repositoryUrl", Toast.LENGTH_LONG)
     }
 
     private fun initView() {
@@ -87,7 +87,8 @@ class EpisodesListFragment : BaseFragment(), EpisodesListListener {
     }
 
     private fun setupRecyclerView() {
-        episodesListFragmentBinding.episodesRecyclerView.layoutManager  = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+        episodesListFragmentBinding.episodesRecyclerView.layoutManager =
+            LinearLayoutManager(context, RecyclerView.VERTICAL, false)
         episodesListFragmentBinding.episodesRecyclerView.setHasFixedSize(true)
 
         episodesListAdapter = EpisodesListAdapter(

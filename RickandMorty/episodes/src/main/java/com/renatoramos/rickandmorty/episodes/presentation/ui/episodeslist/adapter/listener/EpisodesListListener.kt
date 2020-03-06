@@ -2,5 +2,5 @@ package com.renatoramos.rickandmorty.episodes.presentation.ui.episodeslist.adapt
 
 interface EpisodesListListener {
 
-    fun onItemClick(repositoryUrl: String, ownerUrl : String)
+    fun onItemClick(anyString: String)
 }

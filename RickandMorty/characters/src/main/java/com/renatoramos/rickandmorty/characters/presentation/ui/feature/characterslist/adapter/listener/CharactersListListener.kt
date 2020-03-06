@@ -2,5 +2,5 @@ package com.renatoramos.rickandmorty.characters.presentation.ui.feature.characte
 
 interface CharactersListListener {
 
-    fun onItemClick(repositoryUrl: String, ownerUrl : String)
+    fun onItemClick(anyString: String)
 }

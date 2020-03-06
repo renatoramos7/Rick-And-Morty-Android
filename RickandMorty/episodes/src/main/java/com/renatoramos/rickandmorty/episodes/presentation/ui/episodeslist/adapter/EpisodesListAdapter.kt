@@ -22,11 +22,17 @@ class EpisodesListAdapter (
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        return if (viewType == DATA_VIEW_TYPE) {
-            EpisodeViewHolder.create(parent)
+        val viewHolder: RecyclerView.ViewHolder
+
+         if (viewType == DATA_VIEW_TYPE) {
+             viewHolder = EpisodeViewHolder.create(parent)
+             val episodeViewObject = getItem(viewHolder.adapterPosition)
+             viewHolder.itemView.setOnClickListener{ episodesListListener.onItemClick(episodeViewObject!!.episode) }
         } else {
-            ListFooterViewHolder.create(retry, parent)
+             viewHolder = ListFooterViewHolder.create(retry, parent)
         }
+
+        return viewHolder
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {

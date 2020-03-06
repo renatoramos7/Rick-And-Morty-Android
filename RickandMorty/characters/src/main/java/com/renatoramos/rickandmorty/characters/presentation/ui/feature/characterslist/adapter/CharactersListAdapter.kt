@@ -5,8 +5,8 @@ import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.renatoramos.rickandmorty.characters.presentation.ui.feature.characterslist.adapter.holder.CharactersViewHolder
-import com.renatoramos.rickandmorty.common.ui.reusable.viewholder.ListFooterViewHolder
 import com.renatoramos.rickandmorty.characters.presentation.ui.feature.characterslist.adapter.listener.CharactersListListener
+import com.renatoramos.rickandmorty.common.ui.reusable.viewholder.ListFooterViewHolder
 import com.renatoramos.rickandmorty.common.util.State
 import com.renatoramos.rickandmorty.domain.viewobject.characters.CharacterViewObject
 
@@ -22,11 +22,17 @@ private val charactersListListener: CharactersListListener
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        return if (viewType == DATA_VIEW_TYPE) {
-            CharactersViewHolder.create(parent)
+        val viewHolder: RecyclerView.ViewHolder
+
+        if (viewType == DATA_VIEW_TYPE) {
+            viewHolder = CharactersViewHolder.create(parent)
+            val characterViewObject = getItem(viewHolder.adapterPosition)
+            viewHolder.itemView.setOnClickListener{ charactersListListener.onItemClick(characterViewObject!!.species) }
         } else {
-            ListFooterViewHolder.create(retry, parent)
+            viewHolder =  ListFooterViewHolder.create(retry, parent)
         }
+
+        return viewHolder
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
