@@ -15,9 +15,9 @@ import javax.inject.Inject
 class CharactersListViewModel @Inject constructor(private val charactersUseCase: CharactersUseCase) :
     BaseViewModel() {
 
-     lateinit var reposListLiveData: LiveData<PagedList<CharacterViewObject>>
+    lateinit var reposListLiveData: LiveData<PagedList<CharacterViewObject>>
     private lateinit var charactersDataSourceFactory: CharactersDataSourceFactory
-     private val pageSize = 20
+    private val pageSize = 20
 
     override fun onCleared() {
         super.onCleared()
@@ -45,7 +45,7 @@ class CharactersListViewModel @Inject constructor(private val charactersUseCase:
     }
 
     fun getState(): LiveData<State> {
-        return  Transformations.switchMap<CharactersDataSource,
+        return Transformations.switchMap<CharactersDataSource,
                 State>(
             charactersDataSourceFactory.listRepositoriesDataSourceLiveData,
             CharactersDataSource::state

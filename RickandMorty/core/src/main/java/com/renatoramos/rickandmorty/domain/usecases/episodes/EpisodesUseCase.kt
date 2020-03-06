@@ -9,7 +9,7 @@ import javax.inject.Inject
 class EpisodesUseCase @Inject constructor(
     private val episodesRepository: EpisodesRepository
 ) {
-    fun requestAllCharacters(page: Int): Maybe<MutableList<EpisodeViewObject>> {
+    fun requestAllEpisodes(page: Int): Maybe<MutableList<EpisodeViewObject>> {
         return episodesRepository.requestAllEpisodes(page).map { characterList ->
             characterList.map { it.toEpisodeViewObject() }.toMutableList()
         }

@@ -1,32 +1,31 @@
-package com.renatoramos.rickandmorty.characters.presentation.ui.feature.characterslist.adapter.datasource
+package com.renatoramos.rickandmorty.episodes.presentation.ui.episodeslist.adapter.datasource
 
 import androidx.lifecycle.MutableLiveData
 import androidx.paging.PageKeyedDataSource
 import com.renatoramos.rickandmorty.common.util.State
-import com.renatoramos.rickandmorty.domain.usecases.characters.CharactersUseCase
-import com.renatoramos.rickandmorty.domain.viewobject.characters.CharacterViewObject
+import com.renatoramos.rickandmorty.domain.usecases.episodes.EpisodesUseCase
+import com.renatoramos.rickandmorty.domain.viewobject.episodes.EpisodeViewObject
 import io.reactivex.Completable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.functions.Action
 import io.reactivex.schedulers.Schedulers
 
-
-class CharactersDataSource(
+class EpisodesDataSource(
     private val compositeDisposable: CompositeDisposable,
-    private val charactersUseCase: CharactersUseCase
-) : PageKeyedDataSource<Int, CharacterViewObject>() {
+    private val episodesUseCase: EpisodesUseCase
+) : PageKeyedDataSource<Int, EpisodeViewObject>() {
 
     var state: MutableLiveData<State> = MutableLiveData()
     private var retryCompletable: Completable? = null
 
     override fun loadInitial(
         params: LoadInitialParams<Int>,
-        callback: LoadInitialCallback<Int, CharacterViewObject>
+        callback: LoadInitialCallback<Int, EpisodeViewObject>
     ) {
         updateState(State.LOADING)
         compositeDisposable.add(
-            charactersUseCase.requestAllCharacters(1)
+            episodesUseCase.requestAllEpisodes(1)
                 .subscribe(
                     { response ->
                         updateState(State.DONE)
@@ -45,29 +44,29 @@ class CharactersDataSource(
 
     override fun loadAfter(
         params: LoadParams<Int>,
-        callback: LoadCallback<Int, CharacterViewObject>
+        callback: LoadCallback<Int, EpisodeViewObject>
     ) {
         updateState(State.LOADING)
-            compositeDisposable.add(
-                charactersUseCase.requestAllCharacters(params.key)
-                    .subscribe(
-                        { response ->
-                            updateState(State.DONE)
-                            callback.onResult(
-                                response,
-                                params.key + 1
-                            )
-                        }, {
-                            updateState(State.ERROR)
-                            setRetry(Action { loadAfter(params, callback) })
-                        }
-                    )
-            )
+        compositeDisposable.add(
+            episodesUseCase.requestAllEpisodes(params.key)
+                .subscribe(
+                    { response ->
+                        updateState(State.DONE)
+                        callback.onResult(
+                            response,
+                            params.key + 1
+                        )
+                    }, {
+                        updateState(State.ERROR)
+                        setRetry(Action { loadAfter(params, callback) })
+                    }
+                )
+        )
     }
 
     override fun loadBefore(
         params: LoadParams<Int>,
-        callback: LoadCallback<Int, CharacterViewObject>
+        callback: LoadCallback<Int, EpisodeViewObject>
     ) {
     }
 

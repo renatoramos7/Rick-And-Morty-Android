@@ -22,28 +22,11 @@ private val charactersListListener: CharactersListListener
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        val viewHolder: RecyclerView.ViewHolder
-
-        if (viewType == DATA_VIEW_TYPE) {
-            viewHolder = CharactersViewHolder.create(parent)
-            //viewHolder.itemView.isLongClickable = true
-
-           /* viewHolder.itemView.setOnLongClickListener {
-                val CharacterViewObject = getItem(viewHolder.adapterPosition)
-
-              *//*  charactersListListener.onItemLongClickRepo(
-                    CharacterViewObject!!.htmlUrl!!,
-                    CharacterViewObject.owner!!.htmlUrl!!
-                )*//*
-
-
-                true
-            }*/
+        return if (viewType == DATA_VIEW_TYPE) {
+            CharactersViewHolder.create(parent)
         } else {
-            viewHolder = ListFooterViewHolder.create(retry, parent)
+            ListFooterViewHolder.create(retry, parent)
         }
-
-        return viewHolder
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
