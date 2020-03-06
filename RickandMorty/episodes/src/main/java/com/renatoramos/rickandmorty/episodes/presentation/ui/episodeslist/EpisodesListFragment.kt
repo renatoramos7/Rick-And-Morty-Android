@@ -44,8 +44,8 @@ class EpisodesListFragment : BaseFragment(), EpisodesListListener {
         initView()
     }
 
-    override fun onItemClick(repositoryUrl: String) {
-        context?.makeTextToast("Coming soon: $repositoryUrl", Toast.LENGTH_LONG)
+    override fun onItemClick(anyString: String) {
+        context?.makeTextToast("Coming soon: $anyString", Toast.LENGTH_LONG)?.show()
     }
 
     private fun initView() {
