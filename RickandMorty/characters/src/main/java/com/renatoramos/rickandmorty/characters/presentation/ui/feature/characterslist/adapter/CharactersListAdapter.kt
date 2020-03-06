@@ -26,8 +26,11 @@ private val charactersListListener: CharactersListListener
 
         if (viewType == DATA_VIEW_TYPE) {
             viewHolder = CharactersViewHolder.create(parent)
-            val characterViewObject = getItem(viewHolder.adapterPosition)
-            viewHolder.itemView.setOnClickListener{ charactersListListener.onItemClick(characterViewObject!!.species) }
+
+            viewHolder.itemView.setOnClickListener{
+                val characterViewObject = getItem(viewHolder.adapterPosition)
+                charactersListListener.onItemClick(characterViewObject!!.species)
+            }
         } else {
             viewHolder =  ListFooterViewHolder.create(retry, parent)
         }

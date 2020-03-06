@@ -26,8 +26,11 @@ class EpisodesListAdapter (
 
          if (viewType == DATA_VIEW_TYPE) {
              viewHolder = EpisodeViewHolder.create(parent)
-             val episodeViewObject = getItem(viewHolder.adapterPosition)
-             viewHolder.itemView.setOnClickListener{ episodesListListener.onItemClick(episodeViewObject!!.episode) }
+
+             viewHolder.itemView.setOnClickListener{
+                 val episodeViewObject = getItem(viewHolder.adapterPosition)
+                 episodesListListener.onItemClick(episodeViewObject!!.episode)
+             }
         } else {
              viewHolder = ListFooterViewHolder.create(retry, parent)
         }
