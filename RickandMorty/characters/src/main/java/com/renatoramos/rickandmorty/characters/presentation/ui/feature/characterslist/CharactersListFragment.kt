@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -15,6 +16,7 @@ import com.renatoramos.rickandmorty.characters.databinding.FragmentCharactersLis
 import com.renatoramos.rickandmorty.characters.presentation.ui.feature.characterslist.adapter.CharactersListAdapter
 import com.renatoramos.rickandmorty.characters.presentation.ui.feature.characterslist.adapter.listener.CharactersListListener
 import com.renatoramos.rickandmorty.common.base.BaseFragment
+import com.renatoramos.rickandmorty.common.extensions.makeTextToast
 import com.renatoramos.rickandmorty.common.util.State
 import javax.inject.Inject
 
@@ -44,7 +46,7 @@ class CharactersListFragment : BaseFragment(), CharactersListListener {
     }
 
     override fun onItemClick(repositoryUrl: String, ownerUrl: String) {
-        // TODO Put action for cell click here
+        context?.makeTextToast("Coming soon",  Toast.LENGTH_LONG)
     }
 
     private fun initView() {
