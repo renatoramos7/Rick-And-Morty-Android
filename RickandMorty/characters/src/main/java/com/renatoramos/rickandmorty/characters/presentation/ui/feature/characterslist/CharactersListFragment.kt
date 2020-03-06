@@ -43,8 +43,8 @@ class CharactersListFragment : BaseFragment(), CharactersListListener {
         initView()
     }
 
-    override fun onItemLongClickRepo(repositoryUrl: String, ownerUrl: String) {
-
+    override fun onItemClick(repositoryUrl: String, ownerUrl: String) {
+        // TODO Put action for cell click here
     }
 
     private fun initView() {

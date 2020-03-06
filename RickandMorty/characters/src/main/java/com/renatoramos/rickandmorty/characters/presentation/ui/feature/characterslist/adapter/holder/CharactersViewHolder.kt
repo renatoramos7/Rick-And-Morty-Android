@@ -9,7 +9,7 @@ import com.renatoramos.rickandmorty.characters.R
 import com.renatoramos.rickandmorty.common.extensions.loadWithGlide
 import com.renatoramos.rickandmorty.common.ui.components.DrawableRequestListener
 import com.renatoramos.rickandmorty.domain.viewobject.characters.CharacterViewObject
-import kotlinx.android.synthetic.main.item_repo.view.*
+import kotlinx.android.synthetic.main.character_viewholder.view.*
 
 class CharactersViewHolder (view: View) : RecyclerView.ViewHolder(view) {
 
@@ -31,7 +31,7 @@ class CharactersViewHolder (view: View) : RecyclerView.ViewHolder(view) {
     companion object {
         fun create(parent: ViewGroup): CharactersViewHolder {
             val view = LayoutInflater.from(parent.context)
-                .inflate(R.layout.item_repo, parent, false)
+                .inflate(R.layout.character_viewholder, parent, false)
             return CharactersViewHolder(view)
         }
     }

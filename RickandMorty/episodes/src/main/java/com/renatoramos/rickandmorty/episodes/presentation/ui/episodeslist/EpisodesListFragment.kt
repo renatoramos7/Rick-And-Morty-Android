@@ -13,15 +13,18 @@ import com.renatoramos.rickandmorty.common.base.BaseFragment
 import com.renatoramos.rickandmorty.common.util.State
 import com.renatoramos.rickandmorty.episodes.R
 import com.renatoramos.rickandmorty.episodes.databinding.FragmentEpisodesListBinding
+import com.renatoramos.rickandmorty.episodes.presentation.ui.episodeslist.adapter.EpisodesListAdapter
+import com.renatoramos.rickandmorty.episodes.presentation.ui.episodeslist.adapter.listener.EpisodesListListener
 import javax.inject.Inject
 
-class EpisodesListFragment : BaseFragment() {
+class EpisodesListFragment : BaseFragment(), EpisodesListListener {
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
 
     private lateinit var episodesListViewModel: EpisodesListViewModel
     private lateinit var episodesListFragmentBinding: FragmentEpisodesListBinding
+    private lateinit var episodesListAdapter: EpisodesListAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,6 +40,10 @@ class EpisodesListFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initView()
+    }
+
+    override fun onItemClick(repositoryUrl: String, ownerUrl: String) {
+        // TODO Put action for cell click here
     }
 
     private fun initView() {
@@ -65,12 +72,12 @@ class EpisodesListFragment : BaseFragment() {
             episodesListFragmentBinding.txtError.visibility =
                 if (episodesListViewModel.listIsEmpty() && state == State.ERROR) View.VISIBLE else View.GONE
             if (!episodesListViewModel.listIsEmpty()) {
-                charactersListAdapter.setState(state ?: State.DONE)
+                episodesListAdapter.setState(state ?: State.DONE)
             }
         })
 
         episodesListViewModel.reposListLiveData.observe(viewLifecycleOwner, Observer {
-            charactersListAdapter.submitList(it)
+            episodesListAdapter.submitList(it)
         })
     }
 
@@ -84,12 +91,12 @@ class EpisodesListFragment : BaseFragment() {
         episodesListFragmentBinding.episodesRecyclerView.setHasFixedSize(true)
 
 
-        charactersListAdapter = CharactersListAdapter(
+        episodesListAdapter = EpisodesListAdapter(
             { episodesListViewModel.retry() },
             this
         )
 
-        episodesListFragmentBinding.episodesRecyclerView.adapter = charactersListAdapter
+        episodesListFragmentBinding.episodesRecyclerView.adapter = episodesListAdapter
     }
 
     private fun getAllEpisodes() {

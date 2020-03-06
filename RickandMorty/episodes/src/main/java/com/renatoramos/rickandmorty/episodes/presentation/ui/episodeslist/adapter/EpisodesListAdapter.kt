@@ -1,19 +1,19 @@
-package com.renatoramos.rickandmorty.characters.presentation.ui.feature.characterslist.adapter
+package com.renatoramos.rickandmorty.episodes.presentation.ui.episodeslist.adapter
 
 import android.view.ViewGroup
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.renatoramos.rickandmorty.characters.presentation.ui.feature.characterslist.adapter.holder.CharactersViewHolder
 import com.renatoramos.rickandmorty.common.ui.reusable.viewholder.ListFooterViewHolder
-import com.renatoramos.rickandmorty.characters.presentation.ui.feature.characterslist.adapter.listener.CharactersListListener
 import com.renatoramos.rickandmorty.common.util.State
-import com.renatoramos.rickandmorty.domain.viewobject.characters.CharacterViewObject
+import com.renatoramos.rickandmorty.domain.viewobject.episodes.EpisodeViewObject
+import com.renatoramos.rickandmorty.episodes.presentation.ui.episodeslist.adapter.holder.EpisodeViewHolder
+import com.renatoramos.rickandmorty.episodes.presentation.ui.episodeslist.adapter.listener.EpisodesListListener
 
-class CharactersListAdapter(
-private val retry: () -> Unit,
-private val charactersListListener: CharactersListListener
-) : PagedListAdapter<CharacterViewObject, RecyclerView.ViewHolder>(characterViewObjectDiffCallback) {
+class EpisodesListAdapter (
+    private val retry: () -> Unit,
+    private val episodesListListener: EpisodesListListener
+) : PagedListAdapter<EpisodeViewObject, RecyclerView.ViewHolder>(EpisodeViewObjectDiffCallback) {
 
     private val DATA_VIEW_TYPE = 1
     private val FOOTER_VIEW_TYPE = 2
@@ -23,7 +23,7 @@ private val charactersListListener: CharactersListListener
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return if (viewType == DATA_VIEW_TYPE) {
-            CharactersViewHolder.create(parent)
+            EpisodeViewHolder.create(parent)
         } else {
             ListFooterViewHolder.create(retry, parent)
         }
@@ -31,7 +31,7 @@ private val charactersListListener: CharactersListListener
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         if (getItemViewType(position) == DATA_VIEW_TYPE)
-            (holder as CharactersViewHolder).bind(getItem(position))
+            (holder as EpisodeViewHolder).bind(getItem(position))
         else (holder as ListFooterViewHolder).bind(state)
     }
 
@@ -53,12 +53,12 @@ private val charactersListListener: CharactersListListener
     }
 
     companion object {
-        val characterViewObjectDiffCallback = object : DiffUtil.ItemCallback<CharacterViewObject>() {
-            override fun areItemsTheSame(oldItem: CharacterViewObject, newItem: CharacterViewObject): Boolean {
+        val EpisodeViewObjectDiffCallback = object : DiffUtil.ItemCallback<EpisodeViewObject>() {
+            override fun areItemsTheSame(oldItem: EpisodeViewObject, newItem: EpisodeViewObject): Boolean {
                 return oldItem.id == newItem.id
             }
 
-            override fun areContentsTheSame(oldItem: CharacterViewObject, newItem: CharacterViewObject): Boolean {
+            override fun areContentsTheSame(oldItem: EpisodeViewObject, newItem: EpisodeViewObject): Boolean {
                 return oldItem == newItem
             }
         }

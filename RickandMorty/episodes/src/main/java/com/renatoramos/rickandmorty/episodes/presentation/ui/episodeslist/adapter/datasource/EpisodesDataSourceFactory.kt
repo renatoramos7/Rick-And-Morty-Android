@@ -3,7 +3,6 @@ package com.renatoramos.rickandmorty.episodes.presentation.ui.episodeslist.adapt
 import androidx.lifecycle.MutableLiveData
 import androidx.paging.DataSource
 import com.renatoramos.rickandmorty.domain.usecases.episodes.EpisodesUseCase
-import com.renatoramos.rickandmorty.domain.viewobject.characters.CharacterViewObject
 import com.renatoramos.rickandmorty.domain.viewobject.episodes.EpisodeViewObject
 import io.reactivex.disposables.CompositeDisposable
 
