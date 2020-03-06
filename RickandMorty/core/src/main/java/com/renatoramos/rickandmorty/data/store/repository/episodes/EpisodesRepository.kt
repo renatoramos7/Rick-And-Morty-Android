@@ -1,6 +1,5 @@
 package com.renatoramos.rickandmorty.data.store.repository.episodes
 
-import androidx.annotation.NonNull
 import com.renatoramos.rickandmorty.data.store.dto.episodes.EpisodeDTO
 import com.renatoramos.rickandmorty.data.store.local.paperdb.provider.episodes.EpisodesProvider
 import com.renatoramos.rickandmorty.data.store.remote.retrofit.api.episodes.EpisodesApi
@@ -38,7 +37,7 @@ class EpisodesRepository @Inject constructor(
             .cache()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .concatMap { repos -> episodesProvider.add(repos, page, TAGKEY) }
+            .concatMap { repos -> episodesProvider.add(repos.results, page, TAGKEY) }
     }
 
 }

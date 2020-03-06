@@ -14,5 +14,4 @@ class EpisodesUseCase @Inject constructor(
             characterList.map { it.toEpisodeViewObject() }.toMutableList()
         }
     }
-
 }

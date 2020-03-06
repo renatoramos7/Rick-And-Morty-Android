@@ -59,7 +59,6 @@ class EpisodesListFragment : BaseFragment(), EpisodesListListener {
         episodesListViewModel =
             ViewModelProvider(activity!!, viewModelFactory).get(EpisodesListViewModel::class.java)
 
-
         episodesListFragmentBinding.let {
             it.lifecycleOwner = this
         }
@@ -86,7 +85,6 @@ class EpisodesListFragment : BaseFragment(), EpisodesListListener {
     }
 
     private fun setupRecyclerView() {
-        episodesListFragmentBinding.episodesRecyclerView.layoutManager = LinearLayoutManager(activity?.baseContext)
         episodesListFragmentBinding.episodesRecyclerView.layoutManager  = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
         episodesListFragmentBinding.episodesRecyclerView.setHasFixedSize(true)
 

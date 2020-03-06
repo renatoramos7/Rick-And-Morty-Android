@@ -12,8 +12,8 @@ class EpisodeViewHolder (view: View) : RecyclerView.ViewHolder(view) {
 
     fun bind(episodeViewObject: EpisodeViewObject?) {
         episodeViewObject?.let {
-            itemView.repoNameTextView.text = episodeViewObject.episode
-            itemView.description.text = episodeViewObject.name
+            itemView.repoNameTextView.text = episodeViewObject.name
+            itemView.description.text =  episodeViewObject.episode
             itemView.loginOwneTextView.text = episodeViewObject.airDate
         }
     }
