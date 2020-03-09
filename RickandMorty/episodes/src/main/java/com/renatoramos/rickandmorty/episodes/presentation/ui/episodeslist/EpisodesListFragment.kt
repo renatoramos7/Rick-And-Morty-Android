@@ -56,7 +56,6 @@ class EpisodesListFragment : BaseFragment(), EpisodesListListener {
         setObservables()
     }
 
-
     private fun bindViewModel() {
         episodesListViewModel =
             ViewModelProvider(activity!!, viewModelFactory).get(EpisodesListViewModel::class.java)
