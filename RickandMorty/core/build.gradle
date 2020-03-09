@@ -1,0 +1,165 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+
+android {
+    compileSdkVersion AndroidConfig.compileSdk
+    buildToolsVersion AndroidConfig.buildTools
+
+    defaultConfig {
+        minSdkVersion AndroidConfig.minSdk
+        targetSdkVersion AndroidConfig.targetSdk
+        versionCode AndroidConfig.versionCode
+        versionName AndroidConfig.versionName
+        testInstrumentationRunner AndroidConfig.testInstrumentationRunner
+
+        kapt {
+            arguments {
+                arg("room.schemaLocation", "$projectDir/schemas".toString())
+            }
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/dependencies.txt'
+        exclude 'META-INF/LGPL2.1'
+    }
+
+    kapt {
+        correctErrorTypes = true
+    }
+
+
+    dataBinding {
+        enabled = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    sourceSets {
+        //Dedicated directories for tests written in Kotlin
+        test.java.srcDirs += "src/test/kotlin"
+        androidTest.java.srcDirs += "src/androidTest/kotlin"
+    }
+
+    afterEvaluate {
+        android.sourceSets.all { sourceSet ->
+            if (!sourceSet.name.startsWith('test') || !sourceSet.name.startsWith('androidTest')) {
+                sourceSet.kotlin.setSrcDirs([])
+            }
+        }
+    }
+
+    buildTypes {
+
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            //signingConfig signingConfigs.release
+        }
+
+        debug {
+            //signingConfig signingConfigs.debug
+            minifyEnabled false
+            versionNameSuffix '-DEBUG'
+        }
+    }
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+
+    // Kotlin
+    api Dependencies.kotlin_stdlib_jdk8
+    api Dependencies.kotlinKTX
+
+    // Android X Dependencies.
+    api Dependencies.androidx_appcompat
+    api Dependencies.androidx_constraintlayout
+
+    // Dagger Dependencies.
+    kapt Dependencies.dagger_compiler
+    kapt Dependencies.dagger_processor
+    api Dependencies.dagger
+    api Dependencies.dagger_android_support
+    api Dependencies.dagger_android
+
+    //Navigation
+    api Dependencies.navigation_fragment
+    api Dependencies.navigation_ui_ktx
+    api Dependencies.navigation_dynamic_features
+
+    // Lifecycle components
+    // ViewModel and LiveData
+    api Dependencies.androidx_lifecycle_ktx
+    api Dependencies.androidx_viewmodel_ktx
+    api Dependencies.androidx_livedata_ktx
+    annotationProcessor Dependencies.androidx_lifecycle_common_java8
+
+    // Android paging.
+    api Dependencies.androidx_paging
+    api Dependencies.androidx_paging_rxjava2
+
+    // ReactiveX Dependencies.
+    api Dependencies.rxjava2
+    api Dependencies.rxandroid2
+
+    // Retrofit.
+    api Dependencies.retrofit2
+
+    // RetroFit adapter
+    api Dependencies.retrofit2_adapter_rxjava2
+
+    // Retrofit Converter
+    api Dependencies.retrofit2_converter_moshi
+
+    // Moshi
+    api Dependencies.moshi
+    api Dependencies.moshi_kotlin
+
+    // OkHttp
+    api Dependencies.okhttp
+    api Dependencies.okhttp_logging_interceptor
+
+    //paperdb
+    api Dependencies.paperdb
+
+    //Glide
+    api Dependencies.glide
+    kapt Dependencies.glide_compiler
+    api Dependencies.glide_okhttp3
+
+    // Test Dependencies.
+    // JUnit
+   testImplementation Dependencies.junit
+
+    //Mockito
+    testImplementation Dependencies.mockito
+    androidTestImplementation Dependencies.mockitoAndroid
+    testImplementation Dependencies.mockito_inline
+
+    //Mockito  Kotlin
+    testImplementation Dependencies.mockito_Kotlin
+
+    // Kotlin Test Support
+    testImplementation Dependencies.kotlin_test
+    testImplementation Dependencies.kotlin_test_junit
+
+    // Espresso
+    androidTestImplementation Dependencies.androidx_test
+    androidTestImplementation Dependencies.androidx_test_espresso
+
+}
