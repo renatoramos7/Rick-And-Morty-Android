@@ -34,6 +34,9 @@ MVVM pattern with Repository Pattern and inspired by the Clean.
 - **Episodes:** Responsible for all Commons files in project.
 - **Characters:** Responsible for all Commons files in project.
 
+
+<img src="https://github.com/renatoramos7/Rick-And-Morty/blob/master/design/Screenshot4.png" width="300">
+
 ### Model View View Model
 
 Model, View, View and Model, Unit Tests and Modularized responsibility layers.
@@ -42,9 +45,9 @@ Model, View, View and Model, Unit Tests and Modularized responsibility layers.
 
 Material Design pattern in available time.
 
-<img src="https://github.com/renatoramos7/Rick-And-Morty/blob/master/design/Screenshot1.png" width="300">
-<img src="https://github.com/renatoramos7/Rick-And-Morty/blob/master/design/Screenshot2.png" width="300">
-<img src="https://github.com/renatoramos7/Rick-And-Morty/blob/master/design/Screenshot3.png" width="300">
+<img src="https://github.com/renatoramos7/Rick-And-Morty/blob/master/design/Screenshot1.jpg" width="300">
+<img src="https://github.com/renatoramos7/Rick-And-Morty/blob/master/design/Screenshot2.jpg" width="300">
+<img src="https://github.com/renatoramos7/Rick-And-Morty/blob/master/design/Screenshot3.jpg" width="300">
 
 ### Libraries
 
