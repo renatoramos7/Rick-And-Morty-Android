@@ -24,15 +24,15 @@ MVVM pattern with Repository Pattern and inspired by the Clean.
 
 **Modularized Projet:**
 **The main packages:**
-- **app:** Responsible for Manifest Merge, and Permissions part.
-- **core:** Responsible for all Commons files in project.
-- **di:** Responsible for all Commons files in project.
-- **buildSrc:** Responsible for all  API requests, 
+- **app:** Responsible for manifest merge, and permissions part.
+- **core:** Responsible for all commons files in the project.
+- **di:** Responsible for all dependency injection in the project.
+- **buildSrc:** Responsible for all Gradle Dependency Management. 
 
 **Modules For Features:**
-- **home:** Responsible for all Commons files in project.
-- **Episodes:** Responsible for all Commons files in project.
-- **Characters:** Responsible for all Commons files in project.
+- **home:** Responsible for navigation part and Bottom Navigation.
+- **Episodes:** Responsible for all episodes module.
+- **Characters:** Responsible for all characters module.
 
 <img src="https://github.com/renatoramos7/Rick-And-Morty/blob/master/design/Screenshot4.png" width="300">
 
