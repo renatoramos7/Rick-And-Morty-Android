@@ -2,6 +2,8 @@
 <br />This is only a sample project and can be modified every time it needs. 
 <br />After All nothing are wrote in the stones.
 
+# \[ 🚧 Work in progress 👷‍♀️⛏👷🔧️👷🔧 🚧 \] Rick and Morty App
+
 # Implementation Details
 
 MVVM pattern with Repository Pattern and inspired by the Clean.
