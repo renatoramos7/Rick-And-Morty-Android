@@ -2,6 +2,8 @@
 <br />This is only a sample project and can be modified every time it needs. 
 <br />After All nothing are wrote in the stones.
 
+# \[ 🚧 Work in progress 👷‍♀️⛏👷🔧️👷🔧 🚧 \] Rick and Morty App
+
 # Implementation Details
 
 MVVM pattern with Repository Pattern and inspired by the Clean.
@@ -31,8 +33,8 @@ MVVM pattern with Repository Pattern and inspired by the Clean.
 
 **Modules For Features:**
 - **home:** Responsible for navigation part and Bottom Navigation.
-- **Episodes:** Responsible for all episodes module.
-- **Characters:** Responsible for all characters module.
+- **episodes:** Responsible for all episodes module.
+- **characters:** Responsible for all characters module.
 
 <img src="https://github.com/renatoramos7/Rick-And-Morty/blob/master/design/Screenshot4.png" width="300">
 
