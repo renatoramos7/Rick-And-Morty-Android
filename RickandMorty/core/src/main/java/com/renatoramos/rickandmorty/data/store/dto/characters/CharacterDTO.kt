@@ -8,29 +8,29 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class CharacterDTO(
-    @Json(name = "created")
+    @field:Json(name = "created")
     val created: String,
-    @Json(name = "episode")
+    @field:Json(name = "episode")
     val episodes: List<String>,
-    @Json(name = "gender")
+    @field:Json(name = "gender")
     val gender: String,
-    @Json(name = "id")
+    @field:Json(name = "id")
     val id: Int,
-    @Json(name = "image")
+    @field:Json(name = "image")
     val image: String,
-    @Json(name = "location")
+    @field:Json(name = "location")
     val location: LocationShortDTO,
-    @Json(name = "name")
+    @field:Json(name = "name")
     val name: String,
-    @Json(name = "origin")
+    @field:Json(name = "origin")
     val origin: LocationShortDTO,
-    @Json(name = "species")
+    @field:Json(name = "species")
     val species: String,
-    @Json(name = "status")
+    @field:Json(name = "status")
     val status: String,
-    @Json(name = "type")
+    @field:Json(name = "type")
     val type: String,
-    @Json(name = "url")
+    @field:Json(name = "url")
     val url: String
 ): Any()
 
