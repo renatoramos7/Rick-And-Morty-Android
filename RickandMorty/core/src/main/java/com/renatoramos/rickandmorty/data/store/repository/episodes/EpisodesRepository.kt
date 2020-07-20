@@ -20,7 +20,7 @@ class EpisodesRepository @Inject constructor(
         val local = getAllEpisodesLocal(page)
 
         return Observable.concatArrayDelayError(remote, local)
-            .filter { list -> list != null }
+            //.filter { list -> list != null }
             .firstElement()
     }
 

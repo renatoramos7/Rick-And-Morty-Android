@@ -20,7 +20,7 @@ class CharactersRepository @Inject constructor(
         val local = getAllCharactersLocal(page)
 
         return Observable.concatArrayDelayError(remote, local)
-            .filter { list -> list != null }
+            //.filter { list -> list != null }
             .firstElement()
     }
 
