@@ -1,9 +1,14 @@
 package com.renatoramos.rickandmorty.data.store.dto.locations
 
 import com.renatoramos.rickandmorty.domain.viewobject.locations.LocationShortViewObject
+import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
+@JsonClass(generateAdapter = true)
 data class LocationShortDTO(
+    @Json(name = "name")
     val name: String,
+    @Json(name = "url")
     val url: String
 )
 

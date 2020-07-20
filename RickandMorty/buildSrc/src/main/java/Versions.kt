@@ -4,7 +4,7 @@ object Versions {
     const val kotlin = "1.3.70"
 
     // Gradle
-    const val gradle = "3.6.1"
+    const val gradle = "4.0.0"
 
     // Android data Binding
     const val dataBindingLibVersion = "3.1.4"
@@ -86,8 +86,8 @@ object Versions {
     const val okhttp3LibVersion = "4.4.0"
 
     // Moshi
-    const val moshiLibVersion = "1.9.2"
-    const val converterMoshiLibVersion = "2.7.2"
+    const val moshiLibVersion = "1.9.3"
+    const val converterMoshiLibVersion = "2.9.0"
 
     // Image cache
     const val glideLibVersion = "4.11.0"

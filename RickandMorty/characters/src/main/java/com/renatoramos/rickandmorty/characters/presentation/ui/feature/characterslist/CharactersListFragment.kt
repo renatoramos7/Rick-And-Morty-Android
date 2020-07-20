@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -33,8 +32,7 @@ class CharactersListFragment : BaseFragment(), CharactersListListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        charactersListFragmentBinding =
-            DataBindingUtil.inflate(inflater, R.layout.fragment_characters_list, container, false)
+        charactersListFragmentBinding = FragmentCharactersListBinding.inflate(layoutInflater)
 
         // Inflate the layout for this fragment
         return charactersListFragmentBinding.root
@@ -60,10 +58,6 @@ class CharactersListFragment : BaseFragment(), CharactersListListener {
     private fun bindViewModel() {
         charactersListViewModel =
             ViewModelProvider(activity!!, viewModelFactory).get(CharactersListViewModel::class.java)
-
-        charactersListFragmentBinding.let {
-            it.lifecycleOwner = this
-        }
     }
 
     private fun setObservables() {
