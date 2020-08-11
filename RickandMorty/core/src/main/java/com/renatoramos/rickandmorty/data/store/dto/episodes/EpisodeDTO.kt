@@ -6,13 +6,19 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class EpisodeDTO(
-    @Json(name = "air_date")
+    @field:Json(name = "air_date")
     val airDate: String,
+    @field:Json(name = "characters")
     val characters: List<String>,
+    @field:Json(name = "created")
     val created: String,
+    @field:Json(name = "episode")
     val episode: String,
+    @field:Json(name = "id")
     val id: Int,
+    @field:Json(name = "name")
     val name: String,
+    @field:Json(name = "url")
     val url: String
 )
 

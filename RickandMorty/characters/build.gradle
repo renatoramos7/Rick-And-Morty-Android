@@ -42,9 +42,8 @@ android {
         correctErrorTypes = true
     }
 
-
-    dataBinding {
-        enabled = true
+    buildFeatures {
+        viewBinding = true
     }
 
     compileOptions {

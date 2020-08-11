@@ -3,7 +3,6 @@ package com.renatoramos.rickandmorty.home.presentation.ui
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.widget.Toolbar
-import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
@@ -34,7 +33,8 @@ class HomeAppActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        homeAppActivityBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        homeAppActivityBinding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(homeAppActivityBinding.root)
         initView()
     }
     override fun onSupportNavigateUp(): Boolean {
@@ -50,10 +50,6 @@ class HomeAppActivity : BaseActivity() {
     private fun bindViewModel() {
         homeAppViewModel = ViewModelProvider(this, viewModelFactory).get(
             HomeAppViewModel::class.java)
-
-       homeAppActivityBinding.let {
-            it.lifecycleOwner = this
-        }
     }
 
     private fun setUiComponents() {

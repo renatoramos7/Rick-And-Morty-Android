@@ -40,8 +40,8 @@ android {
     }
 
 
-    dataBinding {
-        enabled = true
+    buildFeatures {
+        viewBinding = true
     }
 
     compileOptions {
@@ -107,7 +107,7 @@ dependencies {
     api Dependencies.androidx_lifecycle_ktx
     api Dependencies.androidx_viewmodel_ktx
     api Dependencies.androidx_livedata_ktx
-    annotationProcessor Dependencies.androidx_lifecycle_common_java8
+    kapt Dependencies.androidx_lifecycle_common_java8
 
     // Android paging.
     api Dependencies.androidx_paging
@@ -129,6 +129,8 @@ dependencies {
     // Moshi
     api Dependencies.moshi
     api Dependencies.moshi_kotlin
+    api Dependencies.moshi_adapters
+    kapt Dependencies.moshi_codegen
 
     // OkHttp
     api Dependencies.okhttp

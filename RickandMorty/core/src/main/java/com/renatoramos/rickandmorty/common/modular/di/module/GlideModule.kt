@@ -27,7 +27,7 @@ class GlideModule : AppGlideModule() {
         val memoryCacheSizeBytes = 1024 * 1024 * 20 // 20mb
         builder.setMemoryCache(LruResourceCache(memoryCacheSizeBytes.toLong()))
         builder.setDiskCache(InternalCacheDiskCacheFactory(context, memoryCacheSizeBytes.toLong()))
-        builder.setDefaultRequestOptions(requestOptions(context))
+        builder.setDefaultRequestOptions(requestOptions())
         //builder.build(context)
     }
 
@@ -42,7 +42,7 @@ class GlideModule : AppGlideModule() {
         glide.registry.replace(GlideUrl::class.java, InputStream::class.java, factory)
     }
 
-    private fun requestOptions(context: Context): RequestOptions {
+    private fun requestOptions(): RequestOptions {
         return RequestOptions()
             .signature(
                 ObjectKey(

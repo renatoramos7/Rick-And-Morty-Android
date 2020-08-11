@@ -131,6 +131,7 @@ object Dependencies {
     const val moshi = "com.squareup.moshi:moshi:${Versions.moshiLibVersion}"
     const val moshi_adapters =  "com.squareup.moshi:moshi-adapters:${Versions.moshiLibVersion}"
     const val moshi_kotlin =  "com.squareup.moshi:moshi-kotlin:${Versions.moshiLibVersion}"
+    const val moshi_codegen =  "com.squareup.moshi:moshi-kotlin-codegen:${Versions.moshiLibVersion}"
 
     /** OkHttp **/
     const val okhttp = "com.squareup.okhttp3:okhttp:${Versions.okhttp3LibVersion}"
