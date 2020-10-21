@@ -6,11 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.renatoramos.rickandmorty.characters.R
 import com.renatoramos.rickandmorty.characters.databinding.FragmentCharactersListBinding
 import com.renatoramos.rickandmorty.characters.presentation.ui.feature.characterslist.adapter.CharactersListAdapter
 import com.renatoramos.rickandmorty.characters.presentation.ui.feature.characterslist.adapter.listener.CharactersListListener
@@ -61,7 +59,7 @@ class CharactersListFragment : BaseFragment(), CharactersListListener {
     }
 
     private fun setObservables() {
-        charactersListViewModel.getState().observe(viewLifecycleOwner, Observer { state ->
+        charactersListViewModel.getState().observe(viewLifecycleOwner, { state ->
             charactersListFragmentBinding.progressBar.visibility =
                 if (charactersListViewModel.listIsEmpty() && state == State.LOADING) View.VISIBLE else View.GONE
             charactersListFragmentBinding.txtError.visibility =
@@ -71,7 +69,7 @@ class CharactersListFragment : BaseFragment(), CharactersListListener {
             }
         })
 
-        charactersListViewModel.reposListLiveData.observe(viewLifecycleOwner, Observer {
+        charactersListViewModel.reposListLiveData.observe(viewLifecycleOwner, {
             charactersListAdapter.submitList(it)
         })
     }

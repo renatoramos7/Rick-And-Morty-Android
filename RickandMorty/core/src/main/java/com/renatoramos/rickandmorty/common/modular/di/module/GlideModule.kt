@@ -51,7 +51,7 @@ class GlideModule : AppGlideModule() {
             )
             .override(200, 200)
             .centerCrop()
-            .encodeFormat(Bitmap.CompressFormat.WEBP)
+            .encodeFormat(Bitmap.CompressFormat.PNG)
             .encodeQuality(100)
             .diskCacheStrategy(DiskCacheStrategy.RESOURCE)
             .format(DecodeFormat.PREFER_ARGB_8888)

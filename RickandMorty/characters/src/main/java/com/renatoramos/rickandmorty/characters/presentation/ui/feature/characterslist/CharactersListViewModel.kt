@@ -38,15 +38,14 @@ class CharactersListViewModel @Inject constructor(private val charactersUseCase:
             .setEnablePlaceholders(false)
             .build()
 
-        reposListLiveData = LivePagedListBuilder<Int, CharacterViewObject>(
+        reposListLiveData = LivePagedListBuilder(
             charactersDataSourceFactory,
             config
         ).build()
     }
 
     fun getState(): LiveData<State> {
-        return Transformations.switchMap<CharactersDataSource,
-                State>(
+        return Transformations.switchMap(
             charactersDataSourceFactory.listRepositoriesDataSourceLiveData,
             CharactersDataSource::state
         )

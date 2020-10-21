@@ -6,10 +6,10 @@ object AndroidConfig {
 
     const val applicationId = "com.example.rickandmorty"
 
-    const val compileSdk = 29
+    const val compileSdk = 30
     const val minSdk = 21
-    const val targetSdk = 29
-    const val buildTools = "29.0.3"
+    const val targetSdk = 30
+    const val buildTools = "30.0.0"
 
     const val versionCode = versionMajor * 100 + versionMinor * 10 + versionPatch
     const val versionName = "$versionMajor.$versionMinor.$versionPatch"

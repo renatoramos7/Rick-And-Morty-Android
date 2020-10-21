@@ -5,14 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.renatoramos.rickandmorty.common.base.BaseFragment
 import com.renatoramos.rickandmorty.common.extensions.makeTextToast
 import com.renatoramos.rickandmorty.common.util.State
-import com.renatoramos.rickandmorty.episodes.R
 import com.renatoramos.rickandmorty.episodes.databinding.FragmentEpisodesListBinding
 import com.renatoramos.rickandmorty.episodes.presentation.ui.episodeslist.adapter.EpisodesListAdapter
 import com.renatoramos.rickandmorty.episodes.presentation.ui.episodeslist.adapter.listener.EpisodesListListener
@@ -60,7 +58,7 @@ class EpisodesListFragment : BaseFragment(), EpisodesListListener {
     }
 
     private fun setObservables() {
-        episodesListViewModel.getState().observe(viewLifecycleOwner, Observer { state ->
+        episodesListViewModel.getState().observe(viewLifecycleOwner, { state ->
             episodesListFragmentBinding.progressBar.visibility =
                 if (episodesListViewModel.listIsEmpty() && state == State.LOADING) View.VISIBLE else View.GONE
             episodesListFragmentBinding.txtError.visibility =
@@ -70,7 +68,7 @@ class EpisodesListFragment : BaseFragment(), EpisodesListListener {
             }
         })
 
-        episodesListViewModel.reposListLiveData.observe(viewLifecycleOwner, Observer {
+        episodesListViewModel.reposListLiveData.observe(viewLifecycleOwner, {
             episodesListAdapter.submitList(it)
         })
     }

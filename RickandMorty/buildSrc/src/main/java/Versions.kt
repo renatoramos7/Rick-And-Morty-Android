@@ -1,10 +1,10 @@
 object Versions {
 
     //Kotlin
-    const val kotlin = "1.3.70"
+    const val kotlin = "1.4.10"
 
     // Gradle
-    const val gradle = "4.0.0"
+    const val gradle = "4.1.0"
 
     // Android data Binding
     const val dataBindingLibVersion = "3.1.4"

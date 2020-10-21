@@ -38,15 +38,14 @@ class EpisodesListViewModel @Inject constructor(private val episodesUseCase: Epi
             .setEnablePlaceholders(false)
             .build()
 
-        reposListLiveData = LivePagedListBuilder<Int, EpisodeViewObject>(
+        reposListLiveData = LivePagedListBuilder(
             episodesDataSourceFactory,
             config
         ).build()
     }
 
     fun getState(): LiveData<State> {
-        return Transformations.switchMap<EpisodesDataSource,
-                State>(
+        return Transformations.switchMap(
             episodesDataSourceFactory.listRepositoriesDataSourceLiveData,
             EpisodesDataSource::state
         )
